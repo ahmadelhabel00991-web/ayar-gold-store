@@ -1,78 +1,16 @@
-<!doctype html>
-<html lang="ar" dir="rtl">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-<meta name="theme-color" content="#140f0a">
-<title>عيار جولد | متجر ثلاثي الأبعاد</title>
-<link rel="stylesheet" href="three-d.css">
-</head>
-<body>
-<div id="stage"></div>
-<div id="loading"><div class="loadBox"><div class="seal">ع</div><b>نبني صالة العرض ثلاثية الأبعاد...</b><div class="bar"></div><small>يتم تجهيز الإضاءة والفترينات والأسعار</small></div></div>
-
-<div class="topbar">
-  <div class="brand"><span class="brandMark">ع</span><span><b id="brandName">عيار جولد</b><small>متجر ثلاثي الأبعاد</small></span></div>
-  <div class="spacer"></div>
-  <div class="pricePill"><small>بيع جرام 21K</small><b id="price21">—</b></div>
-  <button class="topBtn" onclick="location.href='admin.html'">لوحة التحكم</button>
-</div>
-
-<section class="intro" id="intro">
-  <span class="eyebrow">3D GOLD BOUTIQUE</span>
-  <h1>ادخل محل الذهب فعليًا.</h1>
-  <p>ابدأ من الواجهة الخارجية، ثم ادخل من الباب وتجول بين الفترينات ثلاثية الأبعاد. اضغط على أي جناح لعرض القطع الحقيقية وأسعارها.</p>
-  <div class="actions"><button class="primary" id="enterBtn">دخول المحل</button><button class="ghost" id="tourBtn">جولة تلقائية</button></div>
-  <div class="hint">بعد الدخول: اسحب بإصبعك للنظر حولك، واستخدم أزرار الحركة للتجول.</div>
-</section>
-
-<div class="help hide" id="help"><button onclick="this.parentElement.classList.add('hide')">×</button><b>التحكم</b><br>اسحب الشاشة للنظر • W A S D على الكمبيوتر • الأسهم أسفل اليمين على الهاتف • اضغط أسماء الأجنحة لفتح الفترينة.</div>
-
-<div class="walk" id="walk">
-  <button class="move" data-k="w">↑</button>
-  <button class="move" data-k="a">←</button>
-  <button class="move" data-k="s">↓</button>
-  <button class="move" data-k="d">→</button>
-  <button class="move" data-k="x" id="exitBtn">خروج</button>
-</div>
-
-<div class="lookHint" id="lookHint">اسحب الشاشة للنظر حولك</div>
-
-<div class="bottom" id="bottomPanel">
-  <button id="pricesBtn">الأسعار</button>
-  <button id="aboutBtn">من نحن</button>
-  <button id="contactBtn">تواصل</button>
-  <button id="cartBtn">السلة <span class="badge" id="cartCount">0</span></button>
-</div>
-
-<div id="hotspots"></div>
-
-<div class="shade" id="shade"></div>
-<aside class="drawer" id="drawer">
-  <div class="drawerHead">
-    <div class="drawerHeadTop"><span class="eyebrow">فترينة العرض</span><button class="close" id="drawerClose">×</button></div>
-    <h2 id="drawerTitle">الجناح</h2>
-    <p id="drawerSub">اختر قطعة لعرض تفاصيلها أو إضافتها للسلة.</p>
-  </div>
-  <div class="list" id="productList"></div>
-</aside>
-
-<div class="cartBox" id="cartBox">
-  <button class="close" style="float:left" onclick="toggleCart(false)">×</button>
-  <h2>سلة المشتريات</h2>
-  <div id="cartItems"></div>
-  <div class="cartTotal"><span>الإجمالي</span><span id="cartTotal">—</span></div>
-  <div class="form">
-    <input id="name" placeholder="الاسم">
-    <input id="phone" placeholder="رقم الهاتف">
-    <input id="city" placeholder="المدينة">
-    <select id="pay"><option>الدفع عند الاستلام</option><option>تحويل بنكي</option><option>تنسيق عبر واتساب</option></select>
-    <button class="primary" style="width:100%" id="checkoutBtn">تأكيد الطلب</button>
-    <div id="orderMsg"></div>
-  </div>
-</div>
-
-<div class="toast" id="toast"></div>
-<script type="module" src="three-d.js"></script>
-</body>
-</html>
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><meta name="theme-color" content="#0e0d0b"><title>عيار جولد | جولة المحل الحقيقي</title><style>
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;font-family:system-ui,Tahoma,Arial;background:#0b0a08;color:#fff}button,input{font:inherit}.scene{position:fixed;inset:-3%;background:center/cover no-repeat;transition:opacity .75s ease,transform 7s ease;opacity:0;transform:scale(1.06);filter:saturate(1.04) contrast(1.02)}.scene.on{opacity:1;transform:scale(1.12)}.veil{position:fixed;inset:0;background:linear-gradient(90deg,#0009 0%,transparent 52%,#0004),linear-gradient(0deg,#0009 0%,transparent 35%);pointer-events:none}.top{position:fixed;z-index:10;top:14px;right:14px;left:14px;display:flex;align-items:center;gap:10px}.brand,.price,.admin{backdrop-filter:blur(12px);background:#17130fda;border:1px solid #f0d79530;box-shadow:0 12px 35px #0007}.brand{display:flex;gap:10px;align-items:center;padding:9px 12px;border-radius:16px}.mark{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(145deg,#e3c16d,#996c23);font-weight:900}.brand small{display:block;color:#c9b57f;font-size:11px}.spacer{flex:1}.price{padding:9px 13px;border-radius:15px;text-align:center}.price small{display:block;color:#c8b680;font-size:10px}.price b{color:#fff2c5}.admin{border-radius:14px;color:#f0daa0;padding:10px 13px;text-decoration:none;font-weight:800}.intro{position:fixed;z-index:8;right:5vw;top:50%;transform:translateY(-45%);width:min(500px,88vw);padding:26px;border:1px solid #f0d79538;border-radius:27px;background:#17130fe8;backdrop-filter:blur(14px);box-shadow:0 24px 70px #0008;transition:.4s}.intro.hide{opacity:0;pointer-events:none;transform:translate(30px,-45%)}.eyebrow{display:inline-block;padding:7px 11px;border:1px solid #dabb6b50;border-radius:999px;color:#e6ca80;font-size:11px;font-weight:900}.intro h1{font-size:clamp(34px,5vw,58px);line-height:1.05;margin:15px 0}.intro p{color:#d3c5a6;line-height:1.8}.actions{display:flex;gap:10px;flex-wrap:wrap}.btn{border:0;border-radius:14px;padding:12px 16px;font-weight:900;cursor:pointer}.primary{background:linear-gradient(145deg,#d1aa55,#956721);color:#fff}.ghost{background:#fff7e80d;border:1px solid #ebd18d3d;color:#efdca9}.nav{position:fixed;z-index:9;bottom:17px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:8px;padding:8px;border-radius:999px;background:#17130fdd;border:1px solid #f0d7952a;backdrop-filter:blur(12px);box-shadow:0 12px 38px #0008}.nav button{border:0;background:transparent;color:#d9c695;padding:9px 12px;border-radius:999px;font-weight:800}.nav button.on{background:#c5973b;color:white}.arrow{position:fixed;z-index:9;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;border:1px solid #f3da9633;background:#17130fcf;color:#f2dfad;font-size:24px;backdrop-filter:blur(10px);cursor:pointer}.prev{right:16px}.next{left:16px}.hot{position:fixed;z-index:9;border:1px solid #d4b45f;background:#fff8e8e8;color:#332719;padding:8px 11px;border-radius:999px;font-weight:900;box-shadow:0 10px 30px #0007;animation:pulse 2s infinite;cursor:pointer}.hot:after{content:"";position:absolute;width:9px;height:9px;border-radius:50%;background:#c28f2c;bottom:-19px;right:50%;transform:translateX(50%)}@keyframes pulse{50%{box-shadow:0 0 0 8px #d1a84e22,0 10px 30px #0008}}.drawer{position:fixed;z-index:20;top:0;bottom:0;left:0;width:min(450px,100vw);background:#fffaf0;color:#201810;transform:translateX(-105%);transition:.35s;box-shadow:25px 0 70px #0008;display:grid;grid-template-rows:auto 1fr}.drawer.show{transform:none}.head{padding:18px;border-bottom:1px solid #e7d6b5}.headtop{display:flex;justify-content:space-between;align-items:center}.close{width:38px;height:38px;border:0;border-radius:12px;background:#f0e2c8;font-size:20px}.head h2{margin:9px 0 3px}.head p{margin:0;color:#756957}.list{padding:14px;overflow:auto;display:grid;gap:10px;align-content:start}.product{border:1px solid #e5d4b4;background:#fffdf8;border-radius:18px;padding:13px}.product h3{margin:0 0 6px}.meta{display:flex;gap:6px;flex-wrap:wrap}.meta span{font-size:11px;padding:5px 7px;border-radius:999px;background:#f4ead8}.pprice{font-size:21px;color:#8d6826;font-weight:900;margin:9px 0}.row{display:flex;gap:8px}.row button,.row a{flex:1;text-align:center;border:0;border-radius:11px;padding:9px;font-weight:900;text-decoration:none}.row button{background:#b9872d;color:#fff}.row a{background:#eee0c6;color:#57462f}.shade{position:fixed;z-index:19;inset:0;background:#0008;opacity:0;pointer-events:none;transition:.3s}.shade.show{opacity:1;pointer-events:auto}.hint{position:fixed;z-index:8;right:16px;bottom:78px;background:#17130fdd;border:1px solid #f0d7952a;color:#d6c18c;padding:8px 11px;border-radius:12px;font-size:11px;backdrop-filter:blur(10px)}
+@media(max-width:700px){.intro{right:14px;left:14px;bottom:88px;top:auto;transform:none;width:auto;padding:19px}.intro.hide{transform:translateY(25px)}.intro h1{font-size:34px}.price,.admin{display:none}.arrow{width:42px;height:42px}.nav{max-width:calc(100vw - 25px);overflow:auto}.hot{font-size:10px;padding:7px 9px}.hint{display:none}}
+</style></head><body>
+<div id="s0" class="scene on" style="background-image:url('assets/tour-entrance.jpg')"></div><div id="s1" class="scene" style="background-image:url('assets/tour-middle.jpg')"></div><div id="s2" class="scene" style="background-image:url('assets/tour-rear.jpg')"></div><div class="veil"></div>
+<div class="top"><div class="brand"><span class="mark">ع</span><span><b>عيار جولد</b><small>جولة المحل الحقيقي</small></span></div><div class="spacer"></div><div class="price"><small>بيع جرام 21K</small><b id="p21">—</b></div><a class="admin" href="admin.html">لوحة التحكم</a></div>
+<section class="intro" id="intro"><span class="eyebrow">REAL SHOP VIRTUAL TOUR</span><h1>ادخل المحل الحقيقي.</h1><p>هذه الجولة مبنية من الفيديو الحقيقي للمحل، لا من نموذج 3D تخميني. تنقّل بين نقاط التصوير وافتح الفترينات مباشرة من داخل المكان.</p><div class="actions"><button class="btn primary" onclick="go(1)">دخول المحل</button><button class="btn ghost" onclick="autoTour()">جولة تلقائية</button></div></section>
+<button class="arrow prev" onclick="move(-1)">›</button><button class="arrow next" onclick="move(1)">‹</button>
+<div class="nav"><button id="n0" class="on" onclick="go(0)">الواجهة</button><button id="n1" onclick="go(1)">داخل المعرض</button><button id="n2" onclick="go(2)">آخر المحل</button></div>
+<button id="hotA" class="hot" style="display:none;right:13%;top:46%" onclick="openCat('خواتم')">فترينة الخواتم</button><button id="hotB" class="hot" style="display:none;left:12%;top:52%" onclick="openCat('سلاسل')">فترينة السلاسل</button><button id="hotC" class="hot" style="display:none;left:16%;top:42%" onclick="openCat('أساور')">عرض الأساور</button><button id="hotD" class="hot" style="display:none;right:15%;top:51%" onclick="openCat('سبائك')">السبائك</button>
+<div class="hint">اسحب الصورة قليلًا باللمس • الأسهم للتنقل بين نقاط التصوير</div>
+<div class="shade" id="shade" onclick="closeDrawer()"></div><aside class="drawer" id="drawer"><div class="head"><div class="headtop"><span class="eyebrow">فترينة حقيقية</span><button class="close" onclick="closeDrawer()">×</button></div><h2 id="dt">الجناح</h2><p id="ds">القطع المرتبطة بهذه الفترينة.</p></div><div class="list" id="list"></div></aside>
+<script>
+const K='ayar_store_db_v2',P={24:1,22:.916,21:.875,18:.75,14:.585};function seed(){return{settings:{currency:'₪',whatsapp:'970597303227'},sell24:395,products:[{id:1,name:'خاتم كلاسيك',cat:'خواتم',k:21,w:4.35,work:8,fixed:10,margin:4,stock:6,sku:'RNG-2101'},{id:2,name:'سلسال لمعة',cat:'سلاسل',k:21,w:8.7,work:10,fixed:18,margin:5,stock:4,sku:'NCK-2102'},{id:3,name:'إسوارة نبض',cat:'أساور',k:21,w:11.2,work:9,fixed:15,margin:4.5,stock:3,sku:'BRC-2103'},{id:4,name:'سبيكة 10 غرام',cat:'سبائك',k:24,w:10,work:2,fixed:0,margin:1.5,stock:10,sku:'BAR-2401'}]}}let db;try{db=JSON.parse(localStorage.getItem(K)||'null')}catch(e){}db=db||seed();db.settings=db.settings||seed().settings;db.products=db.products||seed().products;db.sell24=Number(db.sell24||395);function rate(k){return db.sell24*P[k]}function price(p){let b=rate(p.k)*p.w+(p.work||0)*p.w+(p.fixed||0);return b*(1+(p.margin||0)/100)}function money(v){return Number(v).toLocaleString('ar-EG',{maximumFractionDigits:2})+' '+(db.settings.currency||'₪')}document.getElementById('p21').textContent=money(rate(21));let cur=0,timer;function go(i){cur=Math.max(0,Math.min(2,i));document.querySelectorAll('.scene').forEach((e,x)=>e.classList.toggle('on',x===cur));document.querySelectorAll('.nav button').forEach((e,x)=>e.classList.toggle('on',x===cur));document.getElementById('intro').classList.toggle('hide',cur!==0);['hotA','hotB','hotC','hotD'].forEach(id=>document.getElementById(id).style.display='none');if(cur===1){hotA.style.display='block';hotB.style.display='block'}if(cur===2){hotC.style.display='block';hotD.style.display='block'}}function move(d){go(cur+d)}function autoTour(){clearInterval(timer);go(1);timer=setInterval(()=>{if(cur>=2){clearInterval(timer);return}go(cur+1)},2600)}function openCat(cat){let a=db.products.filter(p=>p.cat===cat);dt.textContent='جناح '+cat;ds.textContent=a.length+' قطعة مرتبطة بهذه الفترينة';list.innerHTML=a.length?a.map(p=>'<article class="product"><h3>'+p.name+'</h3><div class="meta"><span>'+p.k+'K</span><span>'+p.w+' غ</span><span>'+(p.sku||'')+'</span><span>'+(p.stock?'متوفر '+p.stock:'نفد')+'</span></div><div class="pprice">'+money(price(p))+'</div><div class="row"><button>أضف للسلة</button><a target="_blank" href="https://wa.me/'+String(db.settings.whatsapp||'').replace(/\\D/g,'')+'?text='+encodeURIComponent('استفسار عن '+p.name)+'">واتساب</a></div></article>').join(''):'<div>لا توجد قطع في هذه الفئة حاليًا.</div>';drawer.classList.add('show');shade.classList.add('show')}function closeDrawer(){drawer.classList.remove('show');shade.classList.remove('show')}document.addEventListener('keydown',e=>{if(e.key==='ArrowLeft')move(1);if(e.key==='ArrowRight')move(-1)});
+let sx=0,sy=0,drag=false;document.addEventListener('pointerdown',e=>{if(e.target.closest('button,a,.drawer'))return;drag=true;sx=e.clientX;sy=e.clientY});document.addEventListener('pointermove',e=>{if(!drag)return;let dx=(e.clientX-sx)*.025,dy=(e.clientY-sy)*.018;document.getElementById('s'+cur).style.backgroundPosition=(50-dx)+'% '+(50-dy)+'%'});document.addEventListener('pointerup',()=>drag=false);
+</script></body></html>
