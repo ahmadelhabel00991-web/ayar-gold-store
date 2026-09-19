@@ -2,119 +2,238 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-<meta name="theme-color" content="#0d0b09">
-<title>عيار جولد | ادخل المحل الحقيقي</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0d0b08">
+<title>مجوهرات أبو معاذ | ذهب بتجربة فاخرة</title>
 <style>
-:root{--gold:#d2aa50;--gold2:#f0d58a;--dark:#0d0b09;--panel:#17130fde;--cream:#fff8e9;--ink:#241b12}
-*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#090806;font-family:system-ui,Tahoma,Arial,sans-serif;color:#fff}button,input,select{font:inherit}button,a{cursor:pointer}
-#tour{position:fixed;inset:0;width:100%;height:100%;object-fit:cover;background:#090806;filter:saturate(1.02) contrast(1.03)}
-.shade{position:fixed;inset:0;pointer-events:none;background:linear-gradient(180deg,#0007 0%,transparent 24%,transparent 66%,#000a 100%),linear-gradient(90deg,#0004,transparent 28%,transparent 72%,#0003)}
-.loading{position:fixed;inset:0;z-index:100;display:grid;place-items:center;background:radial-gradient(circle at 50% 35%,#2b2116,#0b0907 68%);transition:.45s}.loading.hide{opacity:0;pointer-events:none}.loaderBox{text-align:center;width:min(330px,85vw)}.seal{width:82px;height:82px;border-radius:26px;display:grid;place-items:center;margin:0 auto 18px;background:linear-gradient(145deg,#ebcc73,#95691f);box-shadow:0 20px 60px #0009;font-size:39px;font-weight:900}.loaderBox h2{margin:0 0 7px}.loaderBox p{margin:0;color:#c9b98d;font-size:12px}.progress{height:4px;border-radius:999px;background:#ffffff17;margin-top:18px;overflow:hidden}.progress i{display:block;height:100%;width:0;background:linear-gradient(90deg,#9f7228,#efd17e);transition:.2s}
-.top{position:fixed;z-index:20;top:12px;right:12px;left:12px;display:flex;gap:9px;align-items:center;pointer-events:none}.brand,.price,.admin{pointer-events:auto;background:var(--panel);border:1px solid #eed68e28;backdrop-filter:blur(14px);box-shadow:0 12px 40px #0006}.brand{display:flex;align-items:center;gap:9px;padding:8px 11px;border-radius:16px}.mark{width:40px;height:40px;border-radius:13px;display:grid;place-items:center;background:linear-gradient(145deg,#e1be66,#956720);font-weight:900}.brand b{display:block}.brand small{display:block;color:#c9b67e;font-size:10px}.spacer{flex:1}.price{border-radius:15px;padding:8px 12px;text-align:center}.price small{display:block;color:#cdbb88;font-size:9px}.price b{font-size:15px;color:#fff0bd}.admin{color:#ecd69a;text-decoration:none;border-radius:14px;padding:10px 12px;font-size:12px;font-weight:900}
-.intro{position:fixed;z-index:18;right:18px;left:18px;bottom:90px;margin:auto;max-width:500px;background:linear-gradient(145deg,#17130ff1,#261d14e8);border:1px solid #eed68e35;border-radius:26px;padding:22px;backdrop-filter:blur(15px);box-shadow:0 24px 70px #0009;transition:.45s}.intro.hide{opacity:0;transform:translateY(28px);pointer-events:none}.eyebrow{display:inline-block;padding:6px 10px;border-radius:999px;border:1px solid #dfc47842;color:#e5ca7f;font-size:10px;font-weight:900;letter-spacing:.5px}.intro h1{font-size:34px;line-height:1.05;margin:13px 0 11px}.intro p{font-size:14px;line-height:1.75;color:#d3c5a3;margin:0 0 16px}.actions{display:flex;gap:9px;flex-wrap:wrap}.btn{border:0;border-radius:14px;padding:12px 16px;font-weight:900}.primary{background:linear-gradient(145deg,#d2aa50,#986a22);color:#fff;box-shadow:0 12px 30px #8c5e1d50}.ghost{background:#fff9e90d;color:#efdca8;border:1px solid #eed68e32}
-.controls{position:fixed;z-index:17;left:12px;right:12px;bottom:12px;opacity:0;transform:translateY(20px);pointer-events:none;transition:.35s}.controls.show{opacity:1;transform:none;pointer-events:auto}.barBox{background:#17130fe3;border:1px solid #eed68e28;border-radius:20px;padding:10px 12px;backdrop-filter:blur(14px);box-shadow:0 12px 45px #0008}.timelineRow{display:flex;gap:9px;align-items:center}.time{width:39px;font-size:10px;color:#d8c69b;text-align:center;direction:ltr}.range{flex:1;accent-color:#c9983a}.buttons{display:flex;align-items:center;justify-content:center;gap:7px;margin-top:9px}.ctrl{border:1px solid #eed68e24;background:#fff9ea0a;color:#ecd69b;height:40px;min-width:44px;border-radius:13px;font-weight:900}.ctrl.main{background:linear-gradient(145deg,#d1a74e,#956821);color:#fff;border:0;min-width:58px}.ctrl.text{padding:0 12px;font-size:11px}
-.hotspot{position:fixed;z-index:16;display:none;transform:translate(-50%,-50%);border:1px solid #d9b75f;background:#fff8e9ef;color:#332719;border-radius:999px;padding:9px 12px;font-weight:900;font-size:11px;box-shadow:0 10px 35px #0009;backdrop-filter:blur(7px);animation:pulse 2s infinite}.hotspot.show{display:block}@keyframes pulse{50%{box-shadow:0 0 0 10px #d1a84c20,0 12px 35px #0009}}
-.hint{position:fixed;z-index:16;top:72px;left:12px;right:12px;text-align:center;pointer-events:none;opacity:0;transition:.3s}.hint.show{opacity:1}.hint span{display:inline-block;background:#17130fcf;border:1px solid #eed68e20;color:#d5c18e;padding:7px 10px;border-radius:999px;font-size:10px;backdrop-filter:blur(10px)}
-.rotate{display:none;position:fixed;z-index:30;inset:0;background:#0d0b09f4;place-items:center;text-align:center;padding:30px}.rotate .phone{font-size:52px;margin-bottom:12px}.rotate b{font-size:20px}.rotate p{color:#c7b78e;font-size:13px;line-height:1.7}
-.drawerShade{position:fixed;z-index:39;inset:0;background:#0009;opacity:0;pointer-events:none;transition:.3s}.drawerShade.show{opacity:1;pointer-events:auto}.drawer{position:fixed;z-index:40;right:0;top:0;bottom:0;width:min(430px,100vw);background:#fffaf0;color:var(--ink);transform:translateX(105%);transition:.35s;display:grid;grid-template-rows:auto 1fr;box-shadow:-30px 0 70px #0009}.drawer.show{transform:none}.drawerHead{padding:18px;border-bottom:1px solid #e5d2ad}.drawerTop{display:flex;justify-content:space-between;align-items:center}.drawerHead h2{margin:8px 0 3px}.drawerHead p{margin:0;color:#746653;font-size:12px}.close{width:38px;height:38px;border:0;border-radius:12px;background:#f0e1c5;font-size:20px}.list{overflow:auto;padding:13px;display:grid;gap:10px;align-content:start}.product{border:1px solid #e6d5b6;background:#fffdf8;border-radius:18px;padding:13px}.product h3{margin:0 0 7px}.meta{display:flex;gap:6px;flex-wrap:wrap}.meta span{font-size:10px;padding:5px 7px;border-radius:999px;background:#f4ead7;color:#675944}.pprice{font-size:22px;color:#8b6726;font-weight:900;margin:9px 0}.stock{font-size:10px;color:#44603a}.stock.out{color:#983f3f}.prodActions{display:flex;gap:7px;margin-top:10px}.prodActions button,.prodActions a{flex:1;border:0;border-radius:11px;padding:9px;text-align:center;font-weight:900;text-decoration:none}.prodActions button{background:linear-gradient(145deg,#cfaa57,#966820);color:#fff}.prodActions a{background:#efe2ca;color:#59472f}
-.cart{position:fixed;z-index:25;right:12px;bottom:92px;border:1px solid #eed68e25;background:#17130fe0;color:#efdca6;border-radius:999px;padding:10px 13px;font-weight:900;backdrop-filter:blur(12px);opacity:0;pointer-events:none;transition:.3s}.cart.show{opacity:1;pointer-events:auto}.badge{display:inline-grid;place-items:center;min-width:22px;height:22px;padding:0 5px;border-radius:999px;background:#bd8d31;color:#fff;margin-right:4px}
-.cartPanel{position:fixed;z-index:45;left:12px;right:12px;bottom:12px;margin:auto;max-width:430px;max-height:72vh;overflow:auto;background:#fffaf0;color:#211910;border-radius:22px;padding:17px;box-shadow:0 30px 80px #000a;transform:translateY(120%);transition:.35s}.cartPanel.show{transform:none}.cartPanel h2{margin:0 0 12px}.cartLine{display:flex;justify-content:space-between;gap:8px;padding:9px 0;border-bottom:1px solid #eadfc9}.cartTotal{display:flex;justify-content:space-between;font-size:18px;font-weight:900;margin:13px 0}.form input,.form select{width:100%;border:1px solid #deccaa;background:#fffdf8;border-radius:12px;padding:10px 11px;margin:5px 0 8px}.success{background:#ebf5e8;color:#36582f;border-radius:12px;padding:10px;margin-top:8px}
-.skip{position:fixed;z-index:17;top:50%;transform:translateY(-50%);border:1px solid #eed68e26;background:#17130fd4;color:#efdca5;width:44px;height:64px;border-radius:16px;backdrop-filter:blur(12px);opacity:0;pointer-events:none;transition:.3s}.skip.show{opacity:1;pointer-events:auto}.skip.prev{right:10px}.skip.next{left:10px}
-@media(min-width:760px){#tour{object-fit:contain}.intro{right:auto;left:7vw;bottom:auto;top:50%;transform:translateY(-45%);max-width:470px}.intro.hide{transform:translate(-25px,-45%)}.controls{max-width:650px;margin:auto}.hotspot{font-size:12px}.cart{bottom:86px}.rotate{display:none!important}}
+:root{
+  --ink:#17130d;--ink2:#251c12;--gold:#b98a34;--gold2:#e4c16d;--cream:#f7f0e5;--paper:#fffaf2;--muted:#746857;--line:#e4d7c2;--white:#fffdf8
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:system-ui,Tahoma,Arial,sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+button,input{font:inherit}
+img{display:block;width:100%}
+.container{width:min(1180px,calc(100% - 34px));margin:auto}
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:.35s;padding:18px 0}
+.nav.scrolled{background:#15110dda;backdrop-filter:blur(14px);padding:10px 0;border-bottom:1px solid #f1d99118}
+.navin{display:flex;align-items:center;gap:22px;color:#fff}
+.brand{display:flex;align-items:center;gap:11px;min-width:220px}
+.mark{width:45px;height:45px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 30% 25%,#efd884,#9a6e21);color:#fff;font-weight:900;box-shadow:0 8px 26px #0005}
+.brand b{font-size:18px}.brand small{display:block;color:#d9c89b;font-size:10px;margin-top:2px}
+.links{display:flex;align-items:center;gap:24px;flex:1;justify-content:center;font-weight:700;font-size:14px}
+.links a{opacity:.88}.links a:hover{opacity:1;color:#efd58a}
+.navActions{display:flex;gap:9px}.navBtn{border:1px solid #f0d89433;background:#fff4d70d;color:#f6e2a9;padding:10px 14px;border-radius:999px;font-weight:800;backdrop-filter:blur(8px)}.navBtn.fill{background:#f0d070;color:#20170c;border-color:transparent}
+.menu{display:none;background:none;border:0;color:#fff;font-size:24px}
+.hero{min-height:100vh;position:relative;display:grid;align-items:end;background:
+linear-gradient(90deg,#090806b8 0%,#09080630 58%,#09080680 100%),
+linear-gradient(0deg,#0b0908 0%,transparent 40%),
+url('assets/tour-middle.jpg') center/cover no-repeat}
+.hero:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 65% 35%,transparent 0 28%,#00000035 75%);pointer-events:none}
+.heroContent{position:relative;z-index:2;padding:165px 0 70px;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:end}
+.kicker{display:inline-flex;gap:8px;align-items:center;color:#edd18a;font-weight:800;font-size:13px;letter-spacing:.3px}
+.kicker:before{content:"";width:45px;height:1px;background:#d5b15b}
+.hero h1{font-size:clamp(46px,7vw,88px);line-height:.98;color:#fffaf0;margin:18px 0 20px;letter-spacing:-2px}
+.hero p{color:#dfd3b9;font-size:18px;line-height:2;max-width:650px;margin:0}
+.heroBtns{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
+.btn{border:0;border-radius:999px;padding:13px 19px;font-weight:900;cursor:pointer;display:inline-flex;align-items:center;justify-content:center}
+.btn.gold{background:linear-gradient(145deg,#e3c16c,#a97823);color:#1a130b;box-shadow:0 14px 35px #0004}
+.btn.ghost{background:#fff8e80c;color:#fff1c4;border:1px solid #f5dd9d35;backdrop-filter:blur(8px)}
+.heroPanel{justify-self:end;width:min(400px,100%);background:#15110dd8;border:1px solid #f1d79126;border-radius:26px;padding:22px;color:#fff;backdrop-filter:blur(14px);box-shadow:0 28px 70px #0007}
+.heroPanelTop{display:flex;justify-content:space-between;gap:12px;align-items:center;border-bottom:1px solid #f2d9931c;padding-bottom:15px;margin-bottom:15px}.heroPanel small{color:#cbb883}.priceNow{font-size:30px;color:#f0d77f;font-weight:900}.miniStats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.miniStats div{background:#fff7dd08;border:1px solid #f1db9d12;border-radius:16px;padding:12px}.miniStats b{display:block;color:#fff6da}.miniStats span{font-size:11px;color:#c9b98e}
+.scrollHint{position:absolute;z-index:3;bottom:22px;left:50%;transform:translateX(-50%);color:#d8c796;font-size:11px;display:flex;align-items:center;gap:8px}.scrollHint i{display:block;width:42px;height:1px;background:#d7bc72}
+
+.stats{background:#15110d;color:#f7e9bc;border-top:1px solid #f0d79115;border-bottom:1px solid #f0d79115}
+.statsGrid{display:grid;grid-template-columns:repeat(4,1fr)}
+.stat{padding:30px 20px;text-align:center;border-left:1px solid #f0d79116}.stat:first-child{border-left:0}.stat b{display:block;font-size:30px;color:#efd37e}.stat span{font-size:13px;color:#c8b789}
+
+.section{padding:100px 0}
+.story{background:var(--paper)}
+.storyGrid{display:grid;grid-template-columns:.9fr 1.1fr;gap:72px;align-items:center}
+.mediaFrame{position:relative;padding:22px 0 0 22px}.mediaFrame:before{content:"";position:absolute;inset:0 22px 22px 0;border:1px solid #c9a85e}
+.mediaFrame img{height:620px;object-fit:cover;position:relative;z-index:1}
+.sectionTag{color:#a57626;font-size:13px;font-weight:900;display:flex;align-items:center;gap:9px}.sectionTag:before{content:"";width:38px;height:1px;background:#b88935}
+.story h2,.featured h2,.experience h2,.visit h2,.newsletter h2{font-size:clamp(36px,5vw,62px);line-height:1.08;margin:16px 0 22px;letter-spacing:-1px}
+.story p{color:var(--muted);line-height:2;font-size:17px}.storyFacts{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:28px}.storyFacts div{padding:17px;border-top:1px solid var(--line)}.storyFacts b{display:block;font-size:24px;color:#8e6725}.storyFacts span{font-size:12px;color:#7e7262}
+
+.featured{background:#eee4d5}
+.sectionHead{display:flex;justify-content:space-between;gap:20px;align-items:end;margin-bottom:38px}.sectionHead p{color:var(--muted);max-width:520px;line-height:1.8;margin:0}
+.productRail{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.productCard{position:relative;background:#fff9ef;border:1px solid #dfceb0;overflow:hidden;transition:.35s}.productCard:hover{transform:translateY(-6px);box-shadow:0 24px 50px #7c5b2218}.productImage{height:390px;background:linear-gradient(145deg,#f8edda,#e5d0a8);position:relative;overflow:hidden}.productImage img{height:100%;object-fit:cover}.productImage:after{content:"";position:absolute;inset:auto 0 0;height:45%;background:linear-gradient(transparent,#0007)}.productBadge{position:absolute;top:14px;right:14px;z-index:2;background:#16110dcf;color:#efd183;padding:8px 11px;border-radius:999px;font-size:11px;font-weight:900}.productInfo{padding:20px}.productInfo h3{font-size:24px;margin:0 0 8px}.productMeta{color:#786b59;font-size:13px;display:flex;gap:10px;flex-wrap:wrap}.productMeta span{padding-left:10px;border-left:1px solid #d9c8aa}.productMeta span:last-child{border-left:0}.productBottom{display:flex;justify-content:space-between;align-items:center;margin-top:17px}.productPrice{font-size:22px;font-weight:900;color:#8b6424}.smallBtn{border:1px solid #caa95d;background:transparent;color:#6f5221;border-radius:999px;padding:9px 12px;font-weight:800}
+.emptyProducts{grid-column:1/-1;text-align:center;padding:40px;border:1px dashed #cdbb9c;color:#6f6250}
+
+.experience{min-height:720px;position:relative;display:grid;align-items:center;background:
+linear-gradient(90deg,#0b0908cf,#0b09085c),
+url('assets/tour-rear.jpg') center/cover fixed no-repeat;color:#fff}
+.experience .container{position:relative;z-index:2}.experienceBox{max-width:610px}.experience p{color:#ddd0b4;font-size:18px;line-height:2}.experienceActions{display:flex;gap:10px;flex-wrap:wrap;margin-top:25px}
+
+.visit{background:#17130d;color:#fff}
+.visitGrid{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}
+.visitPhoto{height:520px;position:relative;overflow:hidden;border:1px solid #f1d79120}.visitPhoto img{height:100%;object-fit:cover}.visitPhoto:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#0008,transparent 50%)}
+.visit p{color:#cbbd9f;line-height:1.9}.contactLines{display:grid;gap:13px;margin-top:25px}.contactLine{display:flex;align-items:center;gap:12px;padding-bottom:13px;border-bottom:1px solid #f0d79118}.contactLine i{width:9px;height:9px;border-radius:50%;background:#d2aa50}
+.socialRow{display:flex;gap:9px;flex-wrap:wrap;margin-top:22px}.social{padding:10px 13px;border-radius:999px;border:1px solid #f0d79125;color:#ebd69d}
+
+.newsletter{background:#f0e7d9;text-align:center}.newsletter .wrap{max-width:720px;margin:auto}.newsletter p{color:#756957;line-height:1.8}.newsletterForm{display:flex;gap:9px;max-width:620px;margin:25px auto 0}.newsletterForm input{flex:1;border:1px solid #d7c4a3;background:#fffaf2;padding:14px 17px;border-radius:999px;outline:none}
+
+footer{background:#0d0b08;color:#cab98f;padding:55px 0 25px}.footerGrid{display:grid;grid-template-columns:1.2fr repeat(3,1fr);gap:30px}.footerGrid b{color:#fff2c9;display:block;margin-bottom:14px}.footerGrid a,.footerGrid p{display:block;margin:8px 0;color:#c3b183;line-height:1.8}.copy{text-align:center;border-top:1px solid #efd69016;padding-top:18px;margin-top:32px;font-size:12px;color:#927f55}
+
+.reveal{opacity:0;transform:translateY(28px);transition:.7s ease}.reveal.show{opacity:1;transform:none}
+.drawerShade{position:fixed;inset:0;z-index:70;background:#0009;opacity:0;pointer-events:none;transition:.3s}.drawerShade.show{opacity:1;pointer-events:auto}.drawer{position:fixed;top:0;bottom:0;left:0;z-index:71;width:min(440px,100vw);background:#fffaf1;color:#20170e;transform:translateX(-105%);transition:.35s;box-shadow:30px 0 80px #0009;display:grid;grid-template-rows:auto 1fr}.drawer.show{transform:none}.drawerHead{padding:19px;border-bottom:1px solid #e4d2b1}.drawerHeadTop{display:flex;justify-content:space-between;align-items:center}.close{width:38px;height:38px;border:0;border-radius:50%;background:#efe0c4}.drawerList{padding:14px;overflow:auto}.detailVisual{height:260px;background:linear-gradient(145deg,#f7ecd8,#e4cda0);margin-bottom:16px;display:grid;place-items:center;color:#a37524;font-size:64px}.detailMeta{display:flex;gap:7px;flex-wrap:wrap}.detailMeta span{padding:6px 8px;border-radius:999px;background:#f0e5d3;font-size:11px}.detailPrice{font-size:30px;font-weight:900;color:#8c6526;margin:17px 0}.detailActions{display:flex;gap:8px}.detailActions button,.detailActions a{flex:1;text-align:center;border:0;border-radius:999px;padding:11px;font-weight:900}.detailActions button{background:#ad7c28;color:#fff}.detailActions a{background:#ece0c9;color:#58462f}
+
+@media(max-width:900px){
+ .links{display:none}.menu{display:block}.heroContent,.storyGrid,.visitGrid{grid-template-columns:1fr}.heroContent{padding-top:140px}.heroPanel{justify-self:start}.statsGrid{grid-template-columns:repeat(2,1fr)}.stat:nth-child(3){border-left:0;border-top:1px solid #f0d79116}.stat:nth-child(4){border-top:1px solid #f0d79116}.productRail{grid-template-columns:1fr 1fr}.storyGrid{gap:35px}.mediaFrame img{height:480px}.footerGrid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:620px){
+ .container{width:min(100% - 24px,1180px)}.nav{padding:10px 0}.brand{min-width:0}.brand small,.navActions .navBtn:not(.fill){display:none}.hero{min-height:920px;background-position:62% center}.heroContent{padding:125px 0 90px}.hero h1{font-size:48px}.hero p{font-size:16px}.heroPanel{width:100%}.statsGrid,.productRail,.storyFacts,.footerGrid{grid-template-columns:1fr}.stat{border-left:0!important;border-top:1px solid #f0d79116}.stat:first-child{border-top:0}.section{padding:75px 0}.mediaFrame img{height:390px}.sectionHead{align-items:start}.newsletterForm{flex-direction:column}.newsletterForm .btn{width:100%}.experience{background-attachment:scroll;min-height:650px}.visitPhoto{height:380px}
+}
 </style>
 </head>
 <body>
-<video id="tour" playsinline muted preload="metadata"></video>
-<div class="shade"></div>
+<header class="nav" id="nav">
+  <div class="container navin">
+    <a class="brand" href="#home"><span class="mark">أ</span><span><b id="brandName">مجوهرات أبو معاذ</b><small>FINE GOLD • JEWELRY</small></span></a>
+    <nav class="links">
+      <a href="#story">قصتنا</a><a href="#featured">مختاراتنا</a><a href="#experience">التجربة</a><a href="#visit">تواصل</a>
+    </nav>
+    <div class="navActions"><a class="navBtn" href="admin.html">الإدارة</a><a class="navBtn fill" href="#featured">تسوّق الآن</a></div>
+    <button class="menu" id="menu">☰</button>
+  </div>
+</header>
 
-<div class="loading" id="loading"><div class="loaderBox"><div class="seal">ع</div><h2>تجهيز دخول المحل الحقيقي</h2><p id="loadText">يتم تحميل الجولة السينمائية من فيديو المحل...</p><div class="progress"><i id="loadBar"></i></div></div></div>
-
-<div class="top">
-  <div class="brand"><span class="mark">ع</span><span><b id="brand">عيار جولد</b><small>REAL STORE EXPERIENCE</small></span></div>
-  <div class="spacer"></div>
-  <div class="price"><small>بيع جرام 21K</small><b id="price21">—</b></div>
-  <a class="admin" href="admin.html">الإدارة</a>
-</div>
-
-<section class="intro" id="intro">
-  <span class="eyebrow">IMMERSIVE GOLD BOUTIQUE</span>
-  <h1>ادخل المحل الحقيقي.</h1>
-  <p>لا صور منفصلة ولا محل مرسوم. الجولة مبنية من الفيديو الحقيقي للمكان وتتحرك معك داخل صالة العرض.</p>
-  <div class="actions"><button class="btn primary" id="enter">دخول المحل</button><button class="btn ghost" id="preview">جولة تلقائية</button></div>
+<main>
+<section class="hero" id="home">
+  <div class="container heroContent">
+    <div>
+      <span class="kicker">ذهب أصيل بتقديم معاصر</span>
+      <h1>قطعةٌ تُختار<br>لتبقى.</h1>
+      <p>تجربة ذهب راقية تجمع بين جمال العرض، وضوح العيار والوزن، وسعر محلي يتحدث مباشرة من لوحة الإدارة.</p>
+      <div class="heroBtns"><a class="btn gold" href="#featured">شاهد المختارات</a><a class="btn ghost" href="#story">اكتشف قصتنا</a></div>
+    </div>
+    <aside class="heroPanel">
+      <div class="heroPanelTop"><div><small>سعر بيع جرام 21K</small><div class="priceNow" id="price21">—</div></div><div><small>آخر تحديث</small><b id="updated">—</b></div></div>
+      <div class="miniStats">
+        <div><b>21K</b><span>الأكثر تداولاً</span></div>
+        <div><b>24K</b><span>ذهب صافي</span></div>
+        <div><b>شفاف</b><span>وزن وعيار وسعر</span></div>
+      </div>
+    </aside>
+  </div>
+  <div class="scrollHint"><i></i> مرّر لاكتشاف المتجر</div>
 </section>
 
-<div class="hint" id="hint"><span>اسحب يمينًا ويسارًا للتحرك في الجولة • اضغط الفترينة عند ظهورها</span></div>
-<button class="skip prev" id="prev">›</button><button class="skip next" id="next">‹</button>
+<section class="stats">
+  <div class="container statsGrid">
+    <div class="stat"><b>21K</b><span>ذهب يومي ومجوهرات</span></div>
+    <div class="stat"><b>24K</b><span>سبائك وذهب صافٍ</span></div>
+    <div class="stat"><b>تسعير حي</b><span>من سعر السوق المحلي</span></div>
+    <div class="stat"><b>طلب مباشر</b><span>متجر + واتساب</span></div>
+  </div>
+</section>
 
-<button class="hotspot" id="h1" style="right:22%;top:50%" data-cat="خواتم">استكشف الخواتم</button>
-<button class="hotspot" id="h2" style="left:22%;top:48%" data-cat="سلاسل">استكشف السلاسل</button>
-<button class="hotspot" id="h3" style="right:18%;top:43%" data-cat="أساور">فترينة الأساور</button>
-<button class="hotspot" id="h4" style="left:22%;top:51%" data-cat="أطقم">عرض الأطقم</button>
-<button class="hotspot" id="h5" style="right:24%;top:52%" data-cat="سبائك">السبائك</button>
+<section class="section story" id="story">
+  <div class="container storyGrid">
+    <div class="mediaFrame reveal"><img src="assets/tour-entrance.jpg" alt="واجهة محل الذهب"></div>
+    <div class="reveal">
+      <span class="sectionTag">قصتنا</span>
+      <h2>الثقة تبدأ<br>من العيار.</h2>
+      <p>في كل قطعة نعرضها، نضع التفاصيل أمامك بوضوح: العيار، الوزن، سعر الجرام، المصنعية والسعر النهائي. لا نريد أن يكون الشراء مجرد صفقة؛ نريده تجربة هادئة وواضحة تليق بقيمة الذهب.</p>
+      <div class="storyFacts">
+        <div><b>وضوح كامل</b><span>بيانات القطعة والسعر أمام العميل</span></div>
+        <div><b>مخزون فعلي</b><span>الكمية تتحدث مع كل طلب</span></div>
+        <div><b>تسعير ذكي</b><span>السوق ينعكس مباشرة على المنتجات</span></div>
+        <div><b>خدمة شخصية</b><span>استشارة وحجز عبر واتساب</span></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-<div class="controls" id="controls"><div class="barBox">
-  <div class="timelineRow"><span class="time" id="now">00:00</span><input class="range" id="timeline" type="range" min="0" max="36.5" value="0" step=".05"><span class="time">00:36</span></div>
-  <div class="buttons"><button class="ctrl text" id="back5">− 5 ث</button><button class="ctrl main" id="play">▶</button><button class="ctrl text" id="fwd5">+ 5 ث</button><button class="ctrl text" id="prices">الأسعار</button></div>
-</div></div>
-<button class="cart" id="cartBtn">السلة <span class="badge" id="cartCount">0</span></button>
+<section class="section featured" id="featured">
+  <div class="container">
+    <div class="sectionHead reveal">
+      <div><span class="sectionTag">من الفترينة</span><h2>قطعٌ تحبها العين.</h2></div>
+      <p>مختارات من المتجر، تتحدث أسعارها تلقائيًا مع سعر الذهب المحلي إذا كانت مفعلة بالتسعير الذكي.</p>
+    </div>
+    <div class="productRail" id="products"></div>
+  </div>
+</section>
+
+<section class="experience" id="experience">
+  <div class="container">
+    <div class="experienceBox reveal">
+      <span class="sectionTag" style="color:#e8ca7a">التجربة</span>
+      <h2>من لحظة الدخول،<br>كل تفصيلة محسوبة.</h2>
+      <p>واجهة هادئة، فترينات مضاءة، رخام أبيض، تفاصيل ذهبية وخدمة تعرف أن الذهب لا يُشترى بسرعة. الموقع يأخذ نفس فلسفة المحل: وضوح، فخامة، وهدوء.</p>
+      <div class="experienceActions"><a class="btn gold" href="#featured">ابدأ التسوق</a><a class="btn ghost" id="whatsappHero" target="_blank">استشارة واتساب</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="section visit" id="visit">
+  <div class="container visitGrid">
+    <div class="reveal">
+      <span class="sectionTag" style="color:#e3c371">تجدنا هنا</span>
+      <h2>زيارة المعرض<br>أو تواصل مباشر.</h2>
+      <p>يمكنك زيارة المعرض لمشاهدة القطعة عن قرب، أو إرسال استفسارك مباشرة للحصول على تفاصيل السعر والوزن والعيار والتوفر.</p>
+      <div class="contactLines">
+        <div class="contactLine"><i></i><span>معرض مجوهرات أبو معاذ</span></div>
+        <div class="contactLine"><i></i><span>استشارة وحجز ومتابعة طلبات</span></div>
+        <div class="contactLine"><i></i><span>أسعار محلية قابلة للتحديث من لوحة الإدارة</span></div>
+      </div>
+      <div class="socialRow"><a id="wa" class="social" target="_blank">واتساب</a><a id="ig" class="social" target="_blank">إنستجرام</a><a id="ms" class="social" target="_blank">ماسنجر</a></div>
+    </div>
+    <div class="visitPhoto reveal"><img src="assets/tour-rear.jpg" alt="داخل محل الذهب"></div>
+  </div>
+</section>
+
+<section class="section newsletter">
+  <div class="container wrap reveal">
+    <span class="sectionTag" style="justify-content:center">ابقَ على تواصل</span>
+    <h2>أسعار جديدة وقطع مختارة،<br>تصلك أولاً.</h2>
+    <p>اترك رقمك لتصلك تحديثات مختارة عن الأسعار والقطع الجديدة والعروض الخاصة.</p>
+    <div class="newsletterForm"><input id="newsletterPhone" placeholder="رقم الجوال"><button class="btn gold" id="newsletterBtn">اشترك</button></div>
+    <div id="newsletterMsg" style="margin-top:12px;color:#6f5d3f"></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container footerGrid">
+    <div><div class="brand"><span class="mark">أ</span><span><b>مجوهرات أبو معاذ</b><small>FINE GOLD • JEWELRY</small></span></div><p>تجربة ذهب فاخرة تجمع بين الثقة، وضوح التفاصيل، وأناقة العرض.</p></div>
+    <div><b>المتجر</b><a href="#featured">مختاراتنا</a><a href="#story">قصتنا</a><a href="#experience">التجربة</a></div>
+    <div><b>الخدمة</b><a href="#visit">تواصل معنا</a><a href="admin.html">لوحة الإدارة</a><a href="#home">العودة للأعلى</a></div>
+    <div><b>ملاحظة</b><p>أسعار الذهب تتغير حسب آخر تحديث معتمد داخل النظام.</p></div>
+  </div>
+  <div class="container copy">© <span id="year"></span> مجوهرات أبو معاذ — جميع الحقوق محفوظة.</div>
+</footer>
 
 <div class="drawerShade" id="drawerShade"></div>
-<aside class="drawer" id="drawer"><div class="drawerHead"><div class="drawerTop"><span class="eyebrow">من داخل الفترينة</span><button class="close" id="drawerClose">×</button></div><h2 id="drawerTitle">الجناح</h2><p id="drawerSub">اختر القطعة التي تريدها.</p></div><div class="list" id="productList"></div></aside>
-
-<div class="cartPanel" id="cartPanel"><button class="close" style="float:left" id="cartClose">×</button><h2>سلة المشتريات</h2><div id="cartItems"></div><div class="cartTotal"><span>الإجمالي</span><span id="cartTotal">—</span></div><div class="form"><input id="name" placeholder="الاسم"><input id="phone" placeholder="رقم الهاتف"><input id="city" placeholder="المدينة"><select id="pay"><option>الدفع عند الاستلام</option><option>تحويل بنكي</option><option>تنسيق عبر واتساب</option></select><button class="btn primary" style="width:100%" id="checkout">تأكيد الطلب</button><div id="orderMsg"></div></div></div>
+<aside class="drawer" id="drawer">
+  <div class="drawerHead"><div class="drawerHeadTop"><span class="sectionTag">تفاصيل القطعة</span><button class="close" id="drawerClose">×</button></div><h2 id="drawerTitle">القطعة</h2></div>
+  <div class="drawerList" id="drawerBody"></div>
+</aside>
 
 <script>
 const KEY='ayar_store_db_v2',PUR={24:1,22:.916,21:.875,18:.75,14:.585};
-function seed(){return{settings:{brand:'عيار جولد',currency:'₪',whatsapp:'970597303227'},sell24:395,buy24:389,products:[{id:1,name:'خاتم كلاسيك',cat:'خواتم',k:21,w:4.35,work:8,fixed:10,margin:4,stock:6,sku:'RNG-2101'},{id:2,name:'سلسال لمعة',cat:'سلاسل',k:21,w:8.7,work:10,fixed:18,margin:5,stock:4,sku:'NCK-2102'},{id:3,name:'إسوارة نبض',cat:'أساور',k:21,w:11.2,work:9,fixed:15,margin:4.5,stock:3,sku:'BRC-2103'},{id:4,name:'حلق نجمة',cat:'أقراط',k:18,w:3.1,work:12,fixed:8,margin:6,stock:8,sku:'EAR-1801'},{id:5,name:'سبيكة 10 غرام',cat:'سبائك',k:24,w:10,work:2,fixed:0,margin:1.5,stock:10,sku:'BAR-2401'},{id:6,name:'طقم مناسبات',cat:'أطقم',k:21,w:24.6,work:13,fixed:25,margin:5.5,stock:2,sku:'SET-2104'}],orders:[]}}
-let db;try{db=JSON.parse(localStorage.getItem(KEY)||'null')}catch(e){}db=db||seed();db.settings=db.settings||seed().settings;db.products=db.products||seed().products;db.orders=db.orders||[];db.sell24=Number(db.sell24||395);
-const rate=k=>db.sell24*PUR[k], money=n=>Number(n||0).toLocaleString('ar-EG',{maximumFractionDigits:2})+' '+(db.settings.currency||'₪');
-function productPrice(p){let base=rate(p.k)*p.w+(p.work||0)*p.w+(p.fixed||0);return +(base*(1+(p.margin||0)/100)).toFixed(2)}
-brand.textContent=db.settings.brand||'عيار جولد';price21.textContent=money(rate(21));
-
-const video=document.getElementById('tour'), timeline=document.getElementById('timeline'), loadBar=document.getElementById('loadBar'), loadText=document.getElementById('loadText');
-const files=Array.from({length:18},(_,i)=>'assets/video-hq/chunk-'+String(i).padStart(2,'0')+'.txt');
-let loaded=0, ready=false, entered=false, dragging=false, startX=0, startT=0, wasPlaying=false;
-Promise.all(files.map((u,i)=>fetch(u).then(r=>{if(!r.ok)throw new Error('تعذر تحميل جزء من الجولة');return r.text()}).then(t=>{loaded++;loadBar.style.width=(loaded/files.length*100)+'%';loadText.textContent='تحميل الجولة '+Math.round(loaded/files.length*100)+'%';return [i,t.trim()]}))).then(parts=>{
-  parts.sort((a,b)=>a[0]-b[0]);const b64=parts.map(x=>x[1]).join('');const raw=atob(b64),bytes=new Uint8Array(raw.length);for(let i=0;i<raw.length;i++)bytes[i]=raw.charCodeAt(i);
-  video.src=URL.createObjectURL(new Blob([bytes],{type:'video/mp4'}));video.addEventListener('loadedmetadata',()=>{timeline.max=video.duration||36.5;video.currentTime=Math.min(1.2,video.duration-.1);ready=true;setTimeout(()=>loading.classList.add('hide'),250)},{once:true});
-}).catch(err=>{loadText.textContent='تعذر تجهيز الجولة: '+err.message;console.error(err)});
-
-const windows=[
- {a:7.7,b:12.0,ids:['h1','h2']},
- {a:12.0,b:17.2,ids:['h2','h3']},
- {a:17.2,b:22.8,ids:['h3','h4']},
- {a:22.8,b:28.8,ids:['h4','h5']},
- {a:28.8,b:34.7,ids:['h1','h5']}
-];
-function syncHotspots(){document.querySelectorAll('.hotspot').forEach(x=>x.classList.remove('show'));if(!entered)return;const w=windows.find(x=>video.currentTime>=x.a&&video.currentTime<x.b);if(w)w.ids.forEach(id=>document.getElementById(id).classList.add('show'))}
-function fmt(s){s=Math.max(0,Math.floor(s));return String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0')}
-function sync(){timeline.value=video.currentTime;now.textContent=fmt(video.currentTime);play.textContent=video.paused?'▶':'❚❚';syncHotspots()}
-video.addEventListener('timeupdate',sync);video.addEventListener('play',sync);video.addEventListener('pause',sync);
-function enter(auto){if(!ready)return;entered=true;intro.classList.add('hide');controls.classList.add('show');cartBtn.classList.add('show');prev.classList.add('show');next.classList.add('show');hint.classList.add('show');video.currentTime=Math.max(2.0,video.currentTime);if(auto){video.playbackRate=.9;video.play()}else video.pause();setTimeout(()=>hint.classList.remove('show'),5000);sync()}
-enterBtn=enter;document.getElementById('enter').onclick=()=>enter(false);document.getElementById('preview').onclick=()=>enter(true);
-document.getElementById('play').onclick=()=>video.paused?video.play():video.pause();
-document.getElementById('back5').onclick=()=>{video.currentTime=Math.max(0,video.currentTime-5);video.pause()};
-document.getElementById('fwd5').onclick=()=>{video.currentTime=Math.min(video.duration||36.5,video.currentTime+5);video.pause()};
-prev.onclick=()=>{video.currentTime=Math.max(0,video.currentTime-4);video.pause()};next.onclick=()=>{video.currentTime=Math.min(video.duration||36.5,video.currentTime+4);video.pause()};
-timeline.oninput=e=>{video.currentTime=Number(e.target.value);video.pause();sync()};
-
-video.addEventListener('pointerdown',e=>{if(!entered)return;dragging=true;startX=e.clientX;startT=video.currentTime;wasPlaying=!video.paused;video.pause();video.setPointerCapture?.(e.pointerId)});
-video.addEventListener('pointermove',e=>{if(!dragging)return;const dx=e.clientX-startX;video.currentTime=Math.max(0,Math.min(video.duration||36.5,startT-dx/22));sync()});
-video.addEventListener('pointerup',()=>{if(!dragging)return;dragging=false;if(wasPlaying)video.play()});
-video.addEventListener('wheel',e=>{if(!entered)return;e.preventDefault();video.pause();video.currentTime=Math.max(0,Math.min(video.duration||36.5,video.currentTime+Math.sign(e.deltaY)*1.1));sync()},{passive:false});
-
-document.querySelectorAll('.hotspot').forEach(h=>h.onclick=()=>openCat(h.dataset.cat));
-function wa(p){return 'https://wa.me/'+String(db.settings.whatsapp||'').replace(/\D/g,'')+'?text='+encodeURIComponent('مرحبًا، أريد الاستفسار عن '+p.name+' - '+(p.sku||''))}
-function openCat(cat){video.pause();const arr=db.products.filter(p=>p.cat===cat);drawerTitle.textContent='جناح '+cat;drawerSub.textContent=arr.length+' قطعة مرتبطة بهذه الفترينة';productList.innerHTML=arr.length?arr.map(p=>'<article class="product"><h3>'+p.name+'</h3><div class="meta"><span>'+p.k+'K</span><span>'+p.w+' غ</span><span>'+(p.sku||'')+'</span></div><div class="pprice">'+money(productPrice(p))+'</div><div class="stock '+(p.stock?'':'out')+'">'+(p.stock?'متوفر '+p.stock+' قطعة':'نفد المخزون')+'</div><div class="prodActions"><button '+(p.stock?'':'disabled')+' onclick="addCart('+p.id+')">أضف للسلة</button><a target="_blank" href="'+wa(p)+'">واتساب</a></div></article>').join(''):'<div>لا توجد قطع في هذه الفئة حاليًا.</div>';drawer.classList.add('show');drawerShade.classList.add('show')}
-function closeDrawer(){drawer.classList.remove('show');drawerShade.classList.remove('show')}drawerClose.onclick=closeDrawer;drawerShade.onclick=closeDrawer;
-
-let cart=JSON.parse(localStorage.getItem('ayar_video_cart')||'[]');
-function renderCart(){cartCount.textContent=cart.reduce((s,i)=>s+i.q,0);let total=0;cartItems.innerHTML=cart.length?cart.map(i=>{const p=db.products.find(x=>x.id===i.id);if(!p)return'';total+=productPrice(p)*i.q;return'<div class="cartLine"><span>'+p.name+' × '+i.q+'</span><b>'+money(productPrice(p)*i.q)+'</b></div>'}).join(''):'<div style="color:#756957">السلة فارغة.</div>';cartTotal.textContent=money(total)}
-window.addCart=id=>{const p=db.products.find(x=>x.id===id);if(!p||!p.stock)return;const i=cart.find(x=>x.id===id);if(i&&i.q<p.stock)i.q++;else if(!i)cart.push({id,q:1});localStorage.setItem('ayar_video_cart',JSON.stringify(cart));renderCart();closeDrawer();cartPanel.classList.add('show')};renderCart();
-cartBtn.onclick=()=>{video.pause();cartPanel.classList.add('show')};cartClose.onclick=()=>cartPanel.classList.remove('show');
-checkout.onclick=()=>{if(!cart.length)return;const nm=name.value.trim(),ph=phone.value.trim(),ct=city.value.trim();if(!nm||!ph||!ct){orderMsg.textContent='أدخل الاسم والهاتف والمدينة.';return}let total=0;cart.forEach(i=>{const p=db.products.find(x=>x.id===i.id);total+=productPrice(p)*i.q});const code='AG-'+Date.now().toString(36).toUpperCase();db.orders.unshift({code,name:nm,phone:ph,city:ct,pay:pay.value,total:+total.toFixed(2),status:'جديد',items:cart.map(x=>({...x})),created:new Date().toISOString()});cart.forEach(i=>{const p=db.products.find(x=>x.id===i.id);if(p)p.stock=Math.max(0,p.stock-i.q)});localStorage.setItem(KEY,JSON.stringify(db));cart=[];localStorage.setItem('ayar_video_cart','[]');renderCart();orderMsg.innerHTML='<div class="success">تم إنشاء الطلب. رقمك: <b>'+code+'</b></div>'};
-prices.onclick=()=>{video.pause();alert('السعر المحلي الآن\n24K: '+money(rate(24))+' / غ\n21K: '+money(rate(21))+' / غ\n18K: '+money(rate(18))+' / غ')};
-document.addEventListener('visibilitychange',()=>{if(document.hidden)video.pause()});
+function seed(){return{settings:{brand:'مجوهرات أبو معاذ',currency:'₪',whatsapp:'',instagram:'https://instagram.com/',messenger:'https://m.me/'},sell24:395,buy24:389,products:[{id:1,name:'خاتم كلاسيك',cat:'خواتم',k:21,w:4.35,work:8,fixed:10,margin:4,stock:6,auto:true,sku:'RNG-2101',featured:true},{id:2,name:'سلسال لمعة',cat:'سلاسل',k:21,w:8.7,work:10,fixed:18,margin:5,stock:4,auto:true,sku:'NCK-2102',featured:true},{id:3,name:'إسوارة نبض',cat:'أساور',k:21,w:11.2,work:9,fixed:15,margin:4.5,stock:3,auto:true,sku:'BRC-2103',featured:true}]}}
+let db;try{db=JSON.parse(localStorage.getItem(KEY)||'null')}catch(e){}db=db||seed();db.settings=db.settings||seed().settings;db.products=db.products||seed().products;db.sell24=Number(db.sell24||395);db.updated=db.updated||new Date().toISOString();
+function rate(k){return db.sell24*PUR[k]}function money(v){return Number(v||0).toLocaleString('ar-EG',{maximumFractionDigits:2})+' '+(db.settings.currency||'₪')}
+function price(p){if(p.auto===false&&p.manual)return Number(p.manual);const b=rate(p.k)*p.w+(p.work||0)*p.w+(p.fixed||0);return +(b*(1+(p.margin||0)/100)).toFixed(2)}
+brandName.textContent=db.settings.brand||'مجوهرات أبو معاذ';price21.textContent=money(rate(21));updated.textContent=new Date(db.updated).toLocaleDateString('ar-EG',{month:'short',day:'numeric'});
+const waNum=String(db.settings.whatsapp||'').replace(/\D/g,'');const waUrl=waNum?'https://wa.me/'+waNum:'#';wa.href=waUrl;whatsappHero.href=waUrl;ig.href=db.settings.instagram||'#';ms.href=db.settings.messenger||'#';
+const fallbackImgs=['assets/tour-entrance.jpg','assets/tour-middle.jpg','assets/tour-rear.jpg'];
+function renderProducts(){
+ let arr=db.products.filter(p=>p.stock>0).sort((a,b)=>Number(b.featured||false)-Number(a.featured||false)).slice(0,3);
+ products.innerHTML=arr.length?arr.map((p,i)=>'<article class="productCard reveal"><div class="productImage"><img src="'+(p.image_url||fallbackImgs[i%3])+'" alt="'+p.name+'"><span class="productBadge">'+p.cat+'</span></div><div class="productInfo"><h3>'+p.name+'</h3><div class="productMeta"><span>'+p.k+'K</span><span>'+p.w+' غ</span><span>'+(p.stock?'متوفر':'نفد')+'</span></div><div class="productBottom"><div class="productPrice">'+money(price(p))+'</div><button class="smallBtn" onclick="openProduct('+p.id+')">التفاصيل</button></div></div></article>').join(''):'<div class="emptyProducts">لا توجد منتجات متاحة حاليًا.</div>';
+ observe();
+}
+window.openProduct=id=>{const p=db.products.find(x=>x.id===id);if(!p)return;drawerTitle.textContent=p.name;drawerBody.innerHTML='<div class="detailVisual">◆</div><div class="detailMeta"><span>'+p.cat+'</span><span>'+p.k+'K</span><span>'+p.w+' غ</span><span>'+(p.sku||'')+'</span></div><div class="detailPrice">'+money(price(p))+'</div><p style="color:#736652;line-height:1.8">قيمة الذهب '+money(rate(p.k)*p.w)+' • المصنعية '+money((p.work||0)*p.w+(p.fixed||0))+'</p><div class="detailActions"><button onclick="addOrder('+p.id+')">اطلب القطعة</button><a target="_blank" href="'+(waNum?waUrl+'?text='+encodeURIComponent('مرحبًا، أريد الاستفسار عن '+p.name+' '+(p.sku||'')):'#')+'">واتساب</a></div>';drawer.classList.add('show');drawerShade.classList.add('show')};
+window.addOrder=id=>{const p=db.products.find(x=>x.id===id);if(!p)return;const u=waNum?waUrl+'?text='+encodeURIComponent('أرغب بطلب '+p.name+' بسعر '+money(price(p))):'#';if(u!=='#')window.open(u,'_blank')};
+drawerClose.onclick=()=>{drawer.classList.remove('show');drawerShade.classList.remove('show')};drawerShade.onclick=drawerClose.onclick;
+nav.classList.toggle('scrolled',scrollY>20);addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>20));
+function observe(){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.14});document.querySelectorAll('.reveal').forEach(e=>io.observe(e))}
+newsletterBtn.onclick=()=>{const v=newsletterPhone.value.trim();newsletterMsg.textContent=v?'تم تسجيل رقمك للاختبار بنجاح.':'أدخل رقم الجوال أولاً.'};
+year.textContent=new Date().getFullYear();renderProducts();observe();
 </script>
-</body></html>
+</body>
+</html>
