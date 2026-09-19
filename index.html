@@ -42,7 +42,7 @@ body.entryLocked{overflow:hidden;height:100vh}
 .entryHint{position:absolute;z-index:6;bottom:6.5%;left:50%;transform:translateX(-50%);color:#c5b68c;font-size:10px;letter-spacing:.08em;white-space:nowrap;transition:opacity .35s}
 .entryPortal.opening .entryHint{opacity:0}
 .entryPortal.done{opacity:0;pointer-events:none;transition:opacity .75s ease}
-@media(max-width:620px){.entryFrame{border-width:7px}.entryScene{background-position:52% center}.entryMonogram{width:76px;height:76px;font-size:30px}.entryContent h1{font-size:40px}.entryContent p{font-size:12px;max-width:300px}.entrySign{top:5.5%;font-size:9px}.entryHint{bottom:4.5%}.entryEnter{min-width:180px}}
+@media(max-width:620px){.insideGrid,.insidePoints{grid-template-columns:1fr}.insideFrame img{height:470px}.entryFrame{border-width:7px}.entryScene{background-position:52% center}.entryMonogram{width:76px;height:76px;font-size:30px}.entryContent h1{font-size:40px}.entryContent p{font-size:12px;max-width:300px}.entrySign{top:5.5%;font-size:9px}.entryHint{bottom:4.5%}.entryEnter{min-width:180px}}
 .nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:.35s;padding:18px 0}
 .nav.scrolled{background:#15110dda;backdrop-filter:blur(14px);padding:10px 0;border-bottom:1px solid #f1d99118}
 .navin{display:flex;align-items:center;gap:22px;color:#fff}
@@ -108,6 +108,7 @@ footer{background:#0d0b08;color:#cab98f;padding:55px 0 25px}.footerGrid{display:
 .reveal{opacity:0;transform:translateY(28px);transition:.7s ease}.reveal.show{opacity:1;transform:none}
 .drawerShade{position:fixed;inset:0;z-index:70;background:#0009;opacity:0;pointer-events:none;transition:.3s}.drawerShade.show{opacity:1;pointer-events:auto}.drawer{position:fixed;top:0;bottom:0;left:0;z-index:71;width:min(440px,100vw);background:#fffaf1;color:#20170e;transform:translateX(-105%);transition:.35s;box-shadow:30px 0 80px #0009;display:grid;grid-template-rows:auto 1fr}.drawer.show{transform:none}.drawerHead{padding:19px;border-bottom:1px solid #e4d2b1}.drawerHeadTop{display:flex;justify-content:space-between;align-items:center}.close{width:38px;height:38px;border:0;border-radius:50%;background:#efe0c4}.drawerList{padding:14px;overflow:auto}.detailVisual{height:260px;background:linear-gradient(145deg,#f7ecd8,#e4cda0);margin-bottom:16px;display:grid;place-items:center;color:#a37524;font-size:64px}.detailMeta{display:flex;gap:7px;flex-wrap:wrap}.detailMeta span{padding:6px 8px;border-radius:999px;background:#f0e5d3;font-size:11px}.detailPrice{font-size:30px;font-weight:900;color:#8c6526;margin:17px 0}.detailActions{display:flex;gap:8px}.detailActions button,.detailActions a{flex:1;text-align:center;border:0;border-radius:999px;padding:11px;font-weight:900}.detailActions button{background:#ad7c28;color:#fff}.detailActions a{background:#ece0c9;color:#58462f}
 
+.insideTour{background:linear-gradient(180deg,#f7efe1,#fffaf2);padding:92px 0}.insideGrid{display:grid;grid-template-columns:1.03fr .97fr;gap:42px;align-items:center}.insideFrame{position:relative;background:#17120e;padding:13px;border-radius:30px;box-shadow:0 28px 70px #573b141f}.insideFrame img{width:100%;height:620px;object-fit:cover;border-radius:22px}.insideFrame:after{content:"";position:absolute;inset:13px;border-radius:22px;background:linear-gradient(180deg,transparent 52%,#0008);pointer-events:none}.insideBadge{position:absolute;z-index:2;right:28px;top:28px;background:#17120edc;color:#efd58b;border:1px solid #f0d79122;padding:9px 13px;border-radius:999px;font-size:12px;font-weight:900;backdrop-filter:blur(8px)}.insideCopy h2{font-size:clamp(38px,5vw,60px);line-height:1.08;margin:15px 0 18px}.insideCopy>p{font-size:17px;line-height:2;color:#6f6251}.insidePoints{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px}.insidePoints div{background:#fffdf7;border:1px solid #e3d4ba;padding:15px;border-radius:16px}.insidePoints b{display:block;margin-bottom:6px;color:#7d5a20}.insidePoints span{color:#746856;font-size:13px;line-height:1.7}
 @media(max-width:900px){
  .links{display:none}.menu{display:block}.heroContent,.storyGrid,.visitGrid{grid-template-columns:1fr}.heroContent{padding-top:140px}.heroPanel{justify-self:start}.statsGrid{grid-template-columns:repeat(2,1fr)}.stat:nth-child(3){border-left:0;border-top:1px solid #f0d79116}.stat:nth-child(4){border-top:1px solid #f0d79116}.productRail{grid-template-columns:1fr 1fr}.storyGrid{gap:35px}.mediaFrame img{height:480px}.footerGrid{grid-template-columns:1fr 1fr}
 }
@@ -121,14 +122,14 @@ footer{background:#0d0b08;color:#cab98f;padding:55px 0 25px}.footerGrid{display:
   <div class="entryScene" id="entryScene"></div><div class="entryGlow"></div>
   <div class="entryDoor left"></div><div class="entryDoor right"></div><div class="entryFrame"></div>
   <div class="entrySign">ABU MUADH • FINE GOLD & JEWELRY</div>
-  <div class="entryContent"><div><div class="entryMonogram">أ</div><h1>مجوهرات أبو معاذ</h1><p>ادخل إلى تجربة الذهب كما لو أنك أمام واجهة المحل.</p><button class="entryEnter" id="entryEnter">ادخل المتجر <span>←</span></button></div></div>
+  <div class="entryContent"><div><div class="entryMonogram">أ</div><h1>مجوهرات أبو معاذ</h1><p>ادخل من الواجهة الحقيقية ثم انتقل مباشرة إلى داخل المحل.</p><button class="entryEnter" id="entryEnter">ادخل المتجر الآن <span>←</span></button></div></div>
   <div class="entryHint">اضغط للدخول • تجربة مصممة من واجهة المحل الحقيقية</div>
 </div>
 <header class="nav" id="nav">
   <div class="container navin">
     <a class="brand" href="#home"><span class="mark">أ</span><span><b id="brandName">مجوهرات أبو معاذ</b><small>FINE GOLD • JEWELRY</small></span></a>
     <nav class="links">
-      <a href="#story">قصتنا</a><a href="#featured">مختاراتنا</a><a href="#experience">التجربة</a><a href="#visit">تواصل</a>
+      <a href="#story">قصتنا</a><a href="#inside-tour">داخل المحل</a><a href="#featured">مختاراتنا</a><a href="#experience">التجربة</a><a href="#visit">تواصل</a>
     </nav>
     <div class="navActions"><a class="navBtn" href="admin.html">الإدارة</a><a class="navBtn fill" href="#featured">تسوّق الآن</a></div>
     <button class="menu" id="menu">☰</button>
@@ -162,6 +163,13 @@ footer{background:#0d0b08;color:#cab98f;padding:55px 0 25px}.footerGrid{display:
     <div class="stat"><b>24K</b><span>سبائك وذهب صافٍ</span></div>
     <div class="stat"><b>تسعير حي</b><span>من سعر السوق المحلي</span></div>
     <div class="stat"><b>طلب مباشر</b><span>متجر + واتساب</span></div>
+  </div>
+</section>
+
+<section class="insideTour" id="inside-tour">
+  <div class="container insideGrid">
+    <div class="insideFrame reveal"><img src="assets/tour-middle.jpg" alt="داخل محل مجوهرات أبو معاذ"><span class="insideBadge">داخل المحل الحقيقي</span></div>
+    <div class="insideCopy reveal"><span class="sectionTag">داخل المحل</span><h2>بعد فتح الباب، تبدأ التجربة من المكان نفسه.</h2><p>المشهد الداخلي مستوحى مباشرة من المحل الحقيقي: الممر الطولي، الفترينات الزجاجية، الرخام الأبيض، والإضاءة الذهبية المخفية. الهدف أن يشعر الزائر أنه انتقل من الواجهة إلى داخل المحل، لا إلى صفحة عادية.</p><div class="insidePoints"><div><b>فترينات حقيقية</b><span>عرض المنتجات بأسلوب قريب من ترتيب الفترينات داخل المحل.</span></div><div><b>هوية المكان</b><span>رخام فاتح، زجاج، أسود وذهبي بنفس روح الواجهة.</span></div><div><b>دخول سينمائي</b><span>فتح بصري للواجهة ثم انتقال مباشر إلى هذا القسم.</span></div><div><b>موبايل أولًا</b><span>التجربة مصممة لتظهر بشكل قوي على شاشة الهاتف.</span></div></div></div>
   </div>
 </section>
 
@@ -269,7 +277,7 @@ function observe(){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isI
 newsletterBtn.onclick=()=>{const v=newsletterPhone.value.trim();newsletterMsg.textContent=v?'تم تسجيل رقمك للاختبار بنجاح.':'أدخل رقم الجوال أولاً.'};
 const entryPortal=document.getElementById('entryPortal'),entryEnter=document.getElementById('entryEnter'),entryScene=document.getElementById('entryScene');
 let entryBusy=false;
-function enterStore(){if(entryBusy||!entryPortal)return;entryBusy=true;entryPortal.classList.add('opening');setTimeout(()=>{window.scrollTo({top:0,left:0,behavior:'auto'});document.body.classList.remove('entryLocked')},900);setTimeout(()=>entryPortal.classList.add('done'),1550);setTimeout(()=>entryPortal.remove(),2350)}
+function enterStore(){if(entryBusy||!entryPortal)return;entryBusy=true;entryPortal.classList.add('opening');setTimeout(()=>{document.body.classList.remove('entryLocked')},780);setTimeout(()=>document.getElementById('inside-tour')?.scrollIntoView({behavior:'smooth',block:'start'}),1050);setTimeout(()=>entryPortal.classList.add('done'),1550);setTimeout(()=>entryPortal.remove(),2350)}
 entryEnter.addEventListener('click',enterStore);entryPortal.addEventListener('dblclick',enterStore);
 entryPortal.addEventListener('pointermove',e=>{if(entryBusy||matchMedia('(pointer:coarse)').matches)return;const x=(e.clientX/innerWidth-.5)*10,y=(e.clientY/innerHeight-.5)*6;entryScene.style.transform='scale(1.055) translate('+(-x*.12)+'px,'+(-y*.12)+'px)'});
 entryPortal.addEventListener('pointerleave',()=>{if(!entryBusy)entryScene.style.transform='scale(1.045)'});
