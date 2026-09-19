@@ -16,6 +16,33 @@ a{text-decoration:none;color:inherit}
 button,input{font:inherit}
 img{display:block;width:100%}
 .container{width:min(1180px,calc(100% - 34px));margin:auto}
+body.entryLocked{overflow:hidden;height:100vh}
+.entryPortal{position:fixed;inset:0;z-index:999;background:#090704;overflow:hidden;isolation:isolate}
+.entryScene{position:absolute;inset:-2%;background:linear-gradient(180deg,#0006 0%,transparent 28%,transparent 62%,#0009 100%),linear-gradient(90deg,#0007 0%,transparent 35%,transparent 65%,#0006 100%),url('assets/tour-entrance.jpg') center/cover no-repeat;transform:scale(1.045);transition:transform 2.2s cubic-bezier(.2,.7,.15,1),filter 1.2s;filter:saturate(.94) contrast(1.05) brightness(.82)}
+.entryPortal.opening .entryScene{transform:scale(1.22) translateY(-1%);filter:saturate(1.02) contrast(1.06) brightness(.9)}
+.entryGlow{position:absolute;inset:0;background:radial-gradient(circle at 50% 42%,rgba(233,197,108,.12),transparent 29%);pointer-events:none}
+.entryDoor{position:absolute;top:0;bottom:0;width:50.05%;z-index:3;background:linear-gradient(110deg,rgba(20,20,20,.58),rgba(255,255,255,.05) 45%,rgba(9,9,9,.48));backdrop-filter:blur(1.2px);transition:transform 1.45s cubic-bezier(.72,0,.18,1);box-shadow:inset 0 0 0 1px rgba(255,255,255,.08)}
+.entryDoor:before,.entryDoor:after{content:"";position:absolute;top:0;bottom:0;width:4px;background:linear-gradient(#121212,#2b2b2b 45%,#0c0c0c);box-shadow:0 0 0 1px rgba(255,255,255,.06)}
+.entryDoor.left{left:0;transform-origin:left center}.entryDoor.left:before{right:0}.entryDoor.left:after{left:7%}
+.entryDoor.right{right:0;transform-origin:right center}.entryDoor.right:before{left:0}.entryDoor.right:after{right:7%}
+.entryPortal.opening .entryDoor.left{transform:translateX(-101%) perspective(900px) rotateY(-7deg)}
+.entryPortal.opening .entryDoor.right{transform:translateX(101%) perspective(900px) rotateY(7deg)}
+.entryFrame{position:absolute;inset:0;z-index:4;pointer-events:none;border:12px solid rgba(12,12,12,.72);box-shadow:inset 0 0 0 1px rgba(239,210,130,.12)}
+.entryFrame:before{content:"";position:absolute;top:0;bottom:0;left:50%;width:2px;background:linear-gradient(transparent,#d8b561 20%,#e7ca80 50%,#d8b561 80%,transparent);transform:translateX(-50%);opacity:.72;transition:opacity .5s}
+.entryPortal.opening .entryFrame:before{opacity:0}
+.entrySign{position:absolute;z-index:5;top:7.5%;left:50%;transform:translateX(-50%);text-align:center;color:#f4e1aa;letter-spacing:.18em;text-transform:uppercase;font-size:11px;white-space:nowrap;text-shadow:0 2px 18px #000}
+.entryContent{position:absolute;z-index:6;inset:0;display:grid;place-items:center;text-align:center;padding:24px;transition:opacity .45s,transform .65s}
+.entryPortal.opening .entryContent{opacity:0;transform:scale(.96)}
+.entryMonogram{width:92px;height:92px;border-radius:50%;margin:0 auto 18px;display:grid;place-items:center;border:1px solid rgba(235,205,122,.42);background:rgba(18,14,10,.68);backdrop-filter:blur(12px);font-size:36px;font-weight:900;color:#f0d27c;box-shadow:0 18px 60px #0009,inset 0 0 35px rgba(223,183,84,.06)}
+.entryContent h1{margin:0;color:#fff7df;font-size:clamp(36px,6vw,72px);font-weight:800;letter-spacing:-1px;text-shadow:0 4px 30px #000}
+.entryContent p{margin:10px 0 0;color:#d7c9a4;font-size:14px;letter-spacing:.03em}
+.entryEnter{margin-top:28px;min-width:190px;border:1px solid rgba(237,208,126,.46);background:rgba(19,14,10,.74);color:#f4dfa3;border-radius:999px;padding:14px 22px;font-weight:900;box-shadow:0 14px 40px #0008;backdrop-filter:blur(12px);transition:.25s}
+.entryEnter:hover{background:#c99c43;color:#1d150b;transform:translateY(-2px)}
+.entryEnter span{display:inline-block;margin-right:8px;transition:.25s}.entryEnter:hover span{transform:translateX(-4px)}
+.entryHint{position:absolute;z-index:6;bottom:6.5%;left:50%;transform:translateX(-50%);color:#c5b68c;font-size:10px;letter-spacing:.08em;white-space:nowrap;transition:opacity .35s}
+.entryPortal.opening .entryHint{opacity:0}
+.entryPortal.done{opacity:0;pointer-events:none;transition:opacity .75s ease}
+@media(max-width:620px){.entryFrame{border-width:7px}.entryScene{background-position:52% center}.entryMonogram{width:76px;height:76px;font-size:30px}.entryContent h1{font-size:40px}.entryContent p{font-size:12px;max-width:300px}.entrySign{top:5.5%;font-size:9px}.entryHint{bottom:4.5%}.entryEnter{min-width:180px}}
 .nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:.35s;padding:18px 0}
 .nav.scrolled{background:#15110dda;backdrop-filter:blur(14px);padding:10px 0;border-bottom:1px solid #f1d99118}
 .navin{display:flex;align-items:center;gap:22px;color:#fff}
@@ -89,7 +116,14 @@ footer{background:#0d0b08;color:#cab98f;padding:55px 0 25px}.footerGrid{display:
 }
 </style>
 </head>
-<body>
+<body class="entryLocked">
+<div class="entryPortal" id="entryPortal" aria-label="مدخل متجر مجوهرات أبو معاذ">
+  <div class="entryScene" id="entryScene"></div><div class="entryGlow"></div>
+  <div class="entryDoor left"></div><div class="entryDoor right"></div><div class="entryFrame"></div>
+  <div class="entrySign">ABU MUADH • FINE GOLD & JEWELRY</div>
+  <div class="entryContent"><div><div class="entryMonogram">أ</div><h1>مجوهرات أبو معاذ</h1><p>ادخل إلى تجربة الذهب كما لو أنك أمام واجهة المحل.</p><button class="entryEnter" id="entryEnter">ادخل المتجر <span>←</span></button></div></div>
+  <div class="entryHint">اضغط للدخول • تجربة مصممة من واجهة المحل الحقيقية</div>
+</div>
 <header class="nav" id="nav">
   <div class="container navin">
     <a class="brand" href="#home"><span class="mark">أ</span><span><b id="brandName">مجوهرات أبو معاذ</b><small>FINE GOLD • JEWELRY</small></span></a>
@@ -233,6 +267,12 @@ drawerClose.onclick=()=>{drawer.classList.remove('show');drawerShade.classList.r
 nav.classList.toggle('scrolled',scrollY>20);addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>20));
 function observe(){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.14});document.querySelectorAll('.reveal').forEach(e=>io.observe(e))}
 newsletterBtn.onclick=()=>{const v=newsletterPhone.value.trim();newsletterMsg.textContent=v?'تم تسجيل رقمك للاختبار بنجاح.':'أدخل رقم الجوال أولاً.'};
+const entryPortal=document.getElementById('entryPortal'),entryEnter=document.getElementById('entryEnter'),entryScene=document.getElementById('entryScene');
+let entryBusy=false;
+function enterStore(){if(entryBusy||!entryPortal)return;entryBusy=true;entryPortal.classList.add('opening');setTimeout(()=>{window.scrollTo({top:0,left:0,behavior:'auto'});document.body.classList.remove('entryLocked')},900);setTimeout(()=>entryPortal.classList.add('done'),1550);setTimeout(()=>entryPortal.remove(),2350)}
+entryEnter.addEventListener('click',enterStore);entryPortal.addEventListener('dblclick',enterStore);
+entryPortal.addEventListener('pointermove',e=>{if(entryBusy||matchMedia('(pointer:coarse)').matches)return;const x=(e.clientX/innerWidth-.5)*10,y=(e.clientY/innerHeight-.5)*6;entryScene.style.transform='scale(1.055) translate('+(-x*.12)+'px,'+(-y*.12)+'px)'});
+entryPortal.addEventListener('pointerleave',()=>{if(!entryBusy)entryScene.style.transform='scale(1.045)'});
 year.textContent=new Date().getFullYear();renderProducts();observe();
 </script>
 </body>
