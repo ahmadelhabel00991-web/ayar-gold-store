@@ -113,6 +113,49 @@ footer{background:#0d0b08;color:#cab98f;padding:55px 0 25px}.footerGrid{display:
 .drawerShade{position:fixed;inset:0;z-index:70;background:#0009;opacity:0;pointer-events:none;transition:.3s}.drawerShade.show{opacity:1;pointer-events:auto}.drawer{position:fixed;top:0;bottom:0;left:0;z-index:71;width:min(440px,100vw);background:#fffaf1;color:#20170e;transform:translateX(-105%);transition:.35s;box-shadow:30px 0 80px #0009;display:grid;grid-template-rows:auto 1fr}.drawer.show{transform:none}.drawerHead{padding:19px;border-bottom:1px solid #e4d2b1}.drawerHeadTop{display:flex;justify-content:space-between;align-items:center}.close{width:38px;height:38px;border:0;border-radius:50%;background:#efe0c4}.drawerList{padding:14px;overflow:auto}.detailVisual{height:260px;background:linear-gradient(145deg,#f7ecd8,#e4cda0);margin-bottom:16px;display:grid;place-items:center;color:#a37524;font-size:64px}.detailMeta{display:flex;gap:7px;flex-wrap:wrap}.detailMeta span{padding:6px 8px;border-radius:999px;background:#f0e5d3;font-size:11px}.detailPrice{font-size:30px;font-weight:900;color:#8c6526;margin:17px 0}.detailActions{display:flex;gap:8px}.detailActions button,.detailActions a{flex:1;text-align:center;border:0;border-radius:999px;padding:11px;font-weight:900}.detailActions button{background:#ad7c28;color:#fff}.detailActions a{background:#ece0c9;color:#58462f}
 
 .insideTour{background:linear-gradient(180deg,#f7efe1,#fffaf2);padding:92px 0}.insideGrid{display:grid;grid-template-columns:1.03fr .97fr;gap:42px;align-items:center}.insideFrame{position:relative;background:#17120e;padding:13px;border-radius:30px;box-shadow:0 28px 70px #573b141f}.insideFrame img{width:100%;height:620px;object-fit:cover;border-radius:22px}.insideFrame:after{content:"";position:absolute;inset:13px;border-radius:22px;background:linear-gradient(180deg,transparent 52%,#0008);pointer-events:none}.insideBadge{position:absolute;z-index:2;right:28px;top:28px;background:#17120edc;color:#efd58b;border:1px solid #f0d79122;padding:9px 13px;border-radius:999px;font-size:12px;font-weight:900;backdrop-filter:blur(8px)}.insideCopy h2{font-size:clamp(38px,5vw,60px);line-height:1.08;margin:15px 0 18px}.insideCopy>p{font-size:17px;line-height:2;color:#6f6251}.insidePoints{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px}.insidePoints div{background:#fffdf7;border:1px solid #e3d4ba;padding:15px;border-radius:16px}.insidePoints b{display:block;margin-bottom:6px;color:#7d5a20}.insidePoints span{color:#746856;font-size:13px;line-height:1.7}
+
+/* First showcase — immersive vitrine */
+.showcaseOne{position:relative;min-height:100svh;background:#0b0907;color:#fff6df;padding:95px 0 72px;overflow:hidden;isolation:isolate}
+.showcaseOne:before{content:"";position:absolute;inset:-8%;background:linear-gradient(90deg,#080705e8,#08070572 48%,#080705d4),url('assets/interior-approved.jpg') center/cover no-repeat;filter:blur(2px) saturate(.9);transform:scale(1.08);z-index:-3}
+.showcaseOne:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 48% 44%,#e6bb5321 0 16%,transparent 43%),linear-gradient(180deg,#0007,transparent 24%,#0008 100%);z-index:-2}
+.showcaseIntro{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:24px}
+.showcaseIntro h2{font-size:clamp(38px,5vw,64px);line-height:1.03;margin:12px 0 0;letter-spacing:-1px}
+.showcaseIntro p{max-width:500px;color:#d1c09c;line-height:1.9;margin:0}
+.vitrineScene{position:relative;min-height:610px;border:1px solid #dfbd6948;border-radius:28px;background:linear-gradient(180deg,#ffffff13,#ffffff05 36%,#00000025),linear-gradient(135deg,#2a2116,#0e0b08);box-shadow:0 38px 100px #000b,inset 0 0 0 1px #fff1b20d;overflow:hidden;transform:translateY(28px) scale(.985);opacity:.45;transition:1s cubic-bezier(.2,.75,.2,1)}
+.showcaseOne.inview .vitrineScene{transform:none;opacity:1}
+.vitrineScene:before{content:"";position:absolute;inset:20px;border:9px solid #9e742c;border-image:linear-gradient(135deg,#f0d17e,#93631f,#e3bd61) 1;box-shadow:inset 0 0 45px #0009,0 0 36px #c38f2c1d;pointer-events:none;z-index:4}
+.vitrineScene:after{content:"";position:absolute;inset:29px;background:linear-gradient(108deg,transparent 4%,#ffffff14 24%,transparent 39%,transparent 62%,#fff1bd0f 76%,transparent 91%);pointer-events:none;z-index:5}
+.vitrineTopLight{position:absolute;left:7%;right:7%;top:34px;height:5px;border-radius:99px;background:#f7d985;box-shadow:0 0 18px #f3c85e,0 0 62px #d49a2c88;z-index:2}
+.vitrineShelf{position:absolute;left:5.5%;right:5.5%;bottom:72px;height:13px;background:linear-gradient(180deg,#edcb72,#8a5d20);box-shadow:0 8px 20px #0008,0 -16px 70px #d2a04428;z-index:2}
+.vitrineShelf:after{content:"";position:absolute;left:0;right:0;top:13px;height:45px;background:linear-gradient(#11100e,#050504);border-top:1px solid #e1bc5f55}
+.vitrineLabel{position:absolute;left:50%;bottom:20px;transform:translateX(-50%);z-index:7;padding:9px 16px;border:1px solid #e3c06a3b;border-radius:999px;background:#080706d9;color:#e8cd88;font-size:11px;font-weight:900;backdrop-filter:blur(10px);white-space:nowrap}
+.vitrineItems{position:absolute;z-index:3;inset:86px 7.5% 100px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:end}
+.vitrineItem{position:relative;min-height:205px;border:0;background:transparent;color:#f7e8bd;padding:14px 10px 17px;border-radius:22px;transition:.35s cubic-bezier(.2,.8,.2,1)}
+.vitrineItem:before{content:"";position:absolute;left:12%;right:12%;bottom:6px;height:20px;border-radius:50%;background:#000b;filter:blur(8px);transition:.35s}
+.vitrineItem:hover,.vitrineItem:focus-visible{transform:translateY(-10px);outline:none}
+.vitrineItem:hover:before,.vitrineItem:focus-visible:before{background:#d5a13a5c;filter:blur(14px)}
+.jewelPedestal{height:150px;display:grid;place-items:center;border-radius:80px 80px 24px 24px;background:radial-gradient(ellipse at 50% 88%,#e0ad4140 0 16%,transparent 47%),linear-gradient(180deg,transparent,#ffffff08);position:relative}
+.jewelPedestal svg{width:min(132px,72%);height:116px;overflow:visible;filter:drop-shadow(0 12px 13px #000b) drop-shadow(0 0 16px #d8a54044);transition:.35s}
+.vitrineItem:hover svg{transform:scale(1.08) rotate(-1deg);filter:drop-shadow(0 14px 15px #000c) drop-shadow(0 0 23px #efc76777)}
+.jewelPedestal:after{content:"";position:absolute;left:18%;right:18%;bottom:4px;height:6px;border-radius:50%;background:#e7c56a66;filter:blur(4px)}
+.vitrineItemText{position:relative;z-index:2;text-align:center;margin-top:4px}.vitrineItemText b{display:block;font-size:16px}.vitrineItemText span{display:block;margin-top:4px;color:#bda976;font-size:10px}
+.vitrineHint{display:flex;align-items:center;justify-content:center;gap:9px;margin-top:18px;color:#c8b27e;font-size:12px}.vitrineHint i{width:7px;height:7px;border-radius:50%;background:#e5be5f;box-shadow:0 0 0 7px #e5be5f14;animation:vPulse 1.8s infinite}
+@keyframes vPulse{50%{box-shadow:0 0 0 12px #e5be5f00}}
+.vitrineShade{position:fixed;inset:0;z-index:89;background:#060504b3;backdrop-filter:blur(6px);opacity:0;pointer-events:none;transition:.35s}.vitrineShade.show{opacity:1;pointer-events:auto}
+.vitrinePanel{position:fixed;z-index:90;top:18px;bottom:18px;left:18px;width:min(520px,calc(100vw - 36px));background:#fffaf1;color:#1d160d;border:1px solid #e1c27b;border-radius:28px;box-shadow:0 35px 100px #000b;transform:translateX(calc(-100% - 40px)) scale(.97);opacity:0;transition:.42s cubic-bezier(.2,.8,.2,1);display:grid;grid-template-rows:auto 1fr;overflow:hidden}
+.vitrinePanel.show{transform:none;opacity:1}
+.vitrinePanelHead{padding:20px 20px 15px;border-bottom:1px solid #e6d6bb;background:linear-gradient(180deg,#fffdf8,#f8efdf)}
+.vitrinePanelHeadTop{display:flex;justify-content:space-between;gap:14px;align-items:center}.vitrinePanelHead h2{margin:10px 0 4px;font-size:31px}.vitrinePanelHead p{margin:0;color:#796c58;font-size:12px}.vitrineClose{width:40px;height:40px;border:0;border-radius:50%;background:#eee0c7;color:#4e3d25;font-size:22px}
+.vitrinePanelBody{overflow:auto;padding:17px}
+.vitrineHero{height:210px;border-radius:22px;background:radial-gradient(circle at 50% 70%,#e0b34d42,transparent 35%),linear-gradient(145deg,#21170e,#090706);display:grid;place-items:center;position:relative;overflow:hidden}
+.vitrineHero:after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 15%,#fff2bd12 32%,transparent 47%)}.vitrineHero svg{width:160px;height:135px;filter:drop-shadow(0 17px 16px #000b) drop-shadow(0 0 24px #e4b64e66)}
+.vitrineSwitch{display:flex;gap:8px;overflow:auto;padding:14px 1px 4px;scrollbar-width:none}.vitrineSwitch::-webkit-scrollbar{display:none}.vitrineSwitch button{flex:0 0 auto;border:1px solid #dfc99f;background:#fffdf8;color:#665641;border-radius:999px;padding:8px 11px;font-weight:800;font-size:11px}.vitrineSwitch button.active{background:#20170d;color:#f0d185;border-color:#20170d}
+.vitrineProductName{display:flex;justify-content:space-between;gap:12px;align-items:end;margin:20px 0 12px}.vitrineProductName h3{font-size:27px;margin:0}.vitrineProductName small{color:#8a7a62}
+.vitrineSpecs{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.vitrineSpecs div{padding:13px;border:1px solid #e7d8bf;background:#fffdf8;border-radius:15px}.vitrineSpecs span{display:block;color:#8b7d68;font-size:10px;margin-bottom:4px}.vitrineSpecs b{font-size:16px}
+.vitrineBreakdown{margin-top:14px;border-top:1px solid #e4d4b9}.vitrineBreakdown div{display:flex;justify-content:space-between;gap:12px;padding:11px 2px;border-bottom:1px solid #eee1cc;color:#6c5d48}.vitrineBreakdown div:last-child{font-weight:900;color:#805c20;font-size:18px}
+.vitrineActions{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:16px}.vitrineActions button,.vitrineActions a{border:0;border-radius:999px;padding:12px;text-align:center;font-weight:900}.vitrineActions button{background:linear-gradient(145deg,#d8b45a,#9a6a20);color:#1d1409}.vitrineActions a{background:#20170d;color:#f0d184}
+@media(max-width:780px){.showcaseOne{padding:75px 0 56px}.showcaseIntro{display:block}.showcaseIntro p{margin-top:12px}.vitrineScene{min-height:600px;border-radius:22px}.vitrineItems{inset:72px 8% 96px;grid-template-columns:repeat(2,1fr);gap:5px 10px}.vitrineItem{min-height:150px;padding:4px}.jewelPedestal{height:115px}.jewelPedestal svg{height:88px}.vitrineItemText b{font-size:14px}.vitrinePanel{left:8px;right:8px;bottom:8px;top:auto;width:auto;max-height:86svh;border-radius:26px 26px 18px 18px;transform:translateY(105%) scale(.98)}.vitrinePanel.show{transform:none}.vitrineHero{height:175px}.vitrinePanelHead h2{font-size:26px}}
+
 @media(max-width:900px){
  .links{display:none}.menu{display:block}.heroContent,.storyGrid,.visitGrid{grid-template-columns:1fr}.heroContent{padding-top:140px}.heroPanel{justify-self:start}.statsGrid{grid-template-columns:repeat(2,1fr)}.stat:nth-child(3){border-left:0;border-top:1px solid #f0d79116}.stat:nth-child(4){border-top:1px solid #f0d79116}.productRail{grid-template-columns:1fr 1fr}.storyGrid{gap:35px}.mediaFrame img{height:480px}.footerGrid{grid-template-columns:1fr 1fr}
 }
@@ -175,6 +218,32 @@ footer{background:#0d0b08;color:#cab98f;padding:55px 0 25px}.footerGrid{display:
     <div class="stat"><b>طلب مباشر</b><span>متجر + واتساب</span></div>
   </div>
 </section>
+
+<section class="showcaseOne" id="first-vitrine" aria-label="الفترينة الأولى">
+  <div class="container">
+    <div class="showcaseIntro">
+      <div><span class="sectionTag" style="color:#e5c46f">الفترينة الأولى</span><h2>اقترب من الذهب.<br>واختر النوع بلمسة.</h2></div>
+      <p>هذه أول فترينة بعد الدخول. المعروض داخلها مرتبط بمنتجات المتجر، واضغط على أي نوع لتظهر تفاصيله بهدوء من دون مغادرة المشهد.</p>
+    </div>
+    <div class="vitrineScene" id="vitrineScene">
+      <div class="vitrineTopLight"></div>
+      <div class="vitrineItems" id="vitrineItems"></div>
+      <div class="vitrineShelf"></div>
+      <div class="vitrineLabel">مجوهرات أبو معاذ • الفترينة 01</div>
+    </div>
+    <div class="vitrineHint"><i></i><span>المس نوعًا من المجوهرات لعرض التفاصيل</span></div>
+  </div>
+</section>
+
+<div class="vitrineShade" id="vitrineShade"></div>
+<aside class="vitrinePanel" id="vitrinePanel" aria-label="تفاصيل مجوهرات الفترينة">
+  <div class="vitrinePanelHead">
+    <div class="vitrinePanelHeadTop"><span class="sectionTag">تفاصيل الفترينة</span><button class="vitrineClose" id="vitrineClose" aria-label="إغلاق">×</button></div>
+    <h2 id="vitrinePanelTitle">—</h2>
+    <p id="vitrinePanelSub">—</p>
+  </div>
+  <div class="vitrinePanelBody" id="vitrinePanelBody"></div>
+</aside>
 
 <section class="insideTour" id="inside-tour">
   <div class="container insideGrid">
@@ -279,6 +348,59 @@ function renderProducts(){
  products.innerHTML=arr.length?arr.map((p,i)=>'<article class="productCard reveal"><div class="productImage"><img src="'+(p.image_url||fallbackImgs[i%3])+'" alt="'+p.name+'"><span class="productBadge">'+p.cat+'</span></div><div class="productInfo"><h3>'+p.name+'</h3><div class="productMeta"><span>'+p.k+'K</span><span>'+p.w+' غ</span><span>'+(p.stock?'متوفر':'نفد')+'</span></div><div class="productBottom"><div class="productPrice">'+money(price(p))+'</div><button class="smallBtn" onclick="openProduct('+p.id+')">التفاصيل</button></div></div></article>').join(''):'<div class="emptyProducts">لا توجد منتجات متاحة حاليًا.</div>';
  observe();
 }
+
+function jewelIcon(cat){
+ const common='fill="none" stroke="url(#g)" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"';
+ const grad='<defs><linearGradient id="g" x1="0" x2="1"><stop stop-color="#f6dda0"/><stop offset=".5" stop-color="#c9942e"/><stop offset="1" stop-color="#ffe9a8"/></linearGradient></defs>';
+ let body='';
+ if(cat.includes('خات')) body='<circle cx="60" cy="66" r="27" '+common+'/><path d="M43 45l17-18 17 18-17 8z" '+common+'/><path d="M50 36h20" '+common+'/>';
+ else if(cat.includes('سلاسل')||cat.includes('سلسل')) body='<path d="M19 34c16 57 66 57 82 0" '+common+'/><path d="M31 42c10 36 48 36 58 0" '+common+'/><path d="M54 86l6 12 6-12" '+common+'/>';
+ else if(cat.includes('أساور')||cat.includes('اساور')) body='<ellipse cx="60" cy="62" rx="42" ry="27" '+common+'/><ellipse cx="60" cy="62" rx="31" ry="18" '+common+'/><circle cx="97" cy="58" r="5" fill="#ffe28a"/>';
+ else if(cat.includes('أقراط')||cat.includes('اقراط')) body='<path d="M38 28c0 23-14 27-14 44 0 13 9 22 20 22s20-9 20-22c0-17-14-21-14-44" '+common+'/><path d="M78 28c0 23-14 27-14 44 0 13 9 22 20 22s20-9 20-22c0-17-14-21-14-44" '+common+'/>';
+ else if(cat.includes('سبائك')||cat.includes('سبيكة')) body='<path d="M23 38h74l10 49H13z" '+common+'/><path d="M33 51h54l5 22H28z" '+common+'/><path d="M49 62h22" '+common+'/>';
+ else if(cat.includes('أطقم')||cat.includes('اطقم')) body='<path d="M20 36c11 43 69 43 80 0" '+common+'/><circle cx="60" cy="83" r="15" '+common+'/><path d="M53 79l7-10 7 10-7 7z" '+common+'/>';
+ else body='<circle cx="60" cy="60" r="31" '+common+'/><path d="M60 20v80M20 60h80" '+common+'/>';
+ return '<svg viewBox="0 0 120 120" aria-hidden="true">'+grad+body+'</svg>';
+}
+function availableVitrineCategories(){
+ const preferred=['خواتم','سلاسل','أساور','أقراط','أطقم','سبائك'];
+ const available=[...new Set(db.products.filter(p=>Number(p.stock||0)>0).map(p=>p.cat).filter(Boolean))];
+ return preferred.filter(x=>available.includes(x)).concat(available.filter(x=>!preferred.includes(x))).slice(0,6);
+}
+function renderFirstVitrine(){
+ const cats=availableVitrineCategories();
+ vitrineItems.innerHTML=cats.length?cats.map(cat=>{
+   const count=db.products.filter(p=>p.cat===cat&&Number(p.stock||0)>0).reduce((s,p)=>s+Number(p.stock||0),0);
+   return '<button class="vitrineItem" type="button" data-cat="'+cat.replace(/"/g,'&quot;')+'"><div class="jewelPedestal">'+jewelIcon(cat)+'</div><div class="vitrineItemText"><b>'+cat+'</b><span>'+count+' قطعة متاحة</span></div></button>'
+ }).join(''):'<div style="grid-column:1/-1;text-align:center;color:#cbb98d">لا توجد قطع متاحة في الفترينة حاليًا.</div>';
+ vitrineItems.querySelectorAll('.vitrineItem').forEach(btn=>btn.addEventListener('click',()=>openVitrineType(btn.dataset.cat)));
+ const firstShowcase=document.getElementById('first-vitrine');
+ const io=new IntersectionObserver(es=>es.forEach(e=>firstShowcase.classList.toggle('inview',e.isIntersecting)),{threshold:.2});
+ io.observe(firstShowcase);
+}
+let activeVitrineList=[];
+function openVitrineType(cat){
+ activeVitrineList=db.products.filter(p=>p.cat===cat&&Number(p.stock||0)>0);
+ if(!activeVitrineList.length)return;
+ vitrinePanelTitle.textContent=cat;
+ vitrinePanelSub.textContent=activeVitrineList.length+' تصميم متاح داخل هذه الفترينة';
+ vitrinePanelBody.innerHTML='<div class="vitrineHero">'+jewelIcon(cat)+'</div><div class="vitrineSwitch">'+activeVitrineList.map((p,i)=>'<button type="button" data-vpid="'+p.id+'" class="'+(i===0?'active':'')+'">'+p.name+'</button>').join('')+'</div><div id="vitrineProductDetail"></div>';
+ vitrinePanelBody.querySelectorAll('[data-vpid]').forEach(b=>b.addEventListener('click',()=>renderVitrineProduct(Number(b.dataset.vpid))));
+ renderVitrineProduct(activeVitrineList[0].id);
+ vitrinePanel.classList.add('show');vitrineShade.classList.add('show');
+ document.querySelectorAll('.vitrineItem').forEach(b=>b.classList.toggle('selected',b.dataset.cat===cat));
+}
+function renderVitrineProduct(id){
+ const p=activeVitrineList.find(x=>Number(x.id)===Number(id));if(!p)return;
+ vitrinePanelBody.querySelectorAll('[data-vpid]').forEach(b=>b.classList.toggle('active',Number(b.dataset.vpid)===Number(id)));
+ const goldValue=rate(p.k)*p.w,workValue=(p.work||0)*p.w+(p.fixed||0),final=price(p);
+ const ask=waNum?waUrl+'?text='+encodeURIComponent('مرحبًا، أريد تفاصيل '+p.name+' - '+(p.sku||'')):'#';
+ document.getElementById('vitrineProductDetail').innerHTML='<div class="vitrineProductName"><div><h3>'+p.name+'</h3><small>'+(p.sku||'قطعة من الفترينة الأولى')+'</small></div><b>'+money(final)+'</b></div><div class="vitrineSpecs"><div><span>العيار</span><b>'+p.k+'K</b></div><div><span>الوزن</span><b>'+p.w+' غ</b></div><div><span>سعر الجرام</span><b>'+money(rate(p.k))+'</b></div><div><span>المتوفر</span><b>'+p.stock+' قطعة</b></div></div><div class="vitrineBreakdown"><div><span>قيمة الذهب</span><b>'+money(goldValue)+'</b></div><div><span>المصنعية</span><b>'+money(workValue)+'</b></div><div><span>السعر النهائي</span><b>'+money(final)+'</b></div></div><div class="vitrineActions"><button type="button" onclick="addOrder('+p.id+')">اطلب القطعة</button><a target="_blank" href="'+ask+'">استفسر واتساب</a></div>';
+}
+function closeVitrine(){vitrinePanel.classList.remove('show');vitrineShade.classList.remove('show');document.querySelectorAll('.vitrineItem').forEach(b=>b.classList.remove('selected'))}
+vitrineClose.addEventListener('click',closeVitrine);vitrineShade.addEventListener('click',closeVitrine);
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&vitrinePanel.classList.contains('show'))closeVitrine()});
+
 window.openProduct=id=>{const p=db.products.find(x=>x.id===id);if(!p)return;drawerTitle.textContent=p.name;drawerBody.innerHTML='<div class="detailVisual">◆</div><div class="detailMeta"><span>'+p.cat+'</span><span>'+p.k+'K</span><span>'+p.w+' غ</span><span>'+(p.sku||'')+'</span></div><div class="detailPrice">'+money(price(p))+'</div><p style="color:#736652;line-height:1.8">قيمة الذهب '+money(rate(p.k)*p.w)+' • المصنعية '+money((p.work||0)*p.w+(p.fixed||0))+'</p><div class="detailActions"><button onclick="addOrder('+p.id+')">اطلب القطعة</button><a target="_blank" href="'+(waNum?waUrl+'?text='+encodeURIComponent('مرحبًا، أريد الاستفسار عن '+p.name+' '+(p.sku||'')):'#')+'">واتساب</a></div>';drawer.classList.add('show');drawerShade.classList.add('show')};
 window.addOrder=id=>{const p=db.products.find(x=>x.id===id);if(!p)return;const u=waNum?waUrl+'?text='+encodeURIComponent('أرغب بطلب '+p.name+' بسعر '+money(price(p))):'#';if(u!=='#')window.open(u,'_blank')};
 drawerClose.onclick=()=>{drawer.classList.remove('show');drawerShade.classList.remove('show')};drawerShade.onclick=drawerClose.onclick;
@@ -293,7 +415,7 @@ function finishEntry(){
  if(!entryPortal)return;
  entryPortal.classList.add('inside');
  document.body.classList.remove('entryLocked');
- document.getElementById('inside-tour')?.scrollIntoView({behavior:'auto',block:'start'});
+ document.getElementById('first-vitrine')?.scrollIntoView({behavior:'auto',block:'start'});
  later(()=>entryPortal.classList.add('done'),180);
  later(()=>entryPortal.remove(),1050);
 }
@@ -306,14 +428,14 @@ function runEntrySequence(){
  later(()=>{entryOpenBtn.textContent='فتح الباب...';entryStatus.textContent='تم تشغيل الإضاءة';entryPortal.classList.add('doorReady')},1450);
  later(()=>{entryOpenBtn.textContent='أهلًا بك';entryStatus.textContent='الدخول من الباب الحقيقي';entryPortal.classList.add('cameraIn')},2450);
  later(()=>entryPortal.classList.add('inside'),3450);
- later(()=>{document.body.classList.remove('entryLocked');document.getElementById('inside-tour')?.scrollIntoView({behavior:'auto',block:'start'})},4050);
+ later(()=>{document.body.classList.remove('entryLocked');document.getElementById('first-vitrine')?.scrollIntoView({behavior:'auto',block:'start'})},4050);
  later(()=>entryPortal.classList.add('done'),4400);
  later(()=>entryPortal.remove(),5250);
 }
 entryOpenBtn.addEventListener('click',runEntrySequence);
 entrySkip.addEventListener('click',finishEntry);
 document.addEventListener('keydown',e=>{if(e.key==='Enter'&&document.getElementById('entryPortal'))runEntrySequence();if(e.key==='Escape'&&document.getElementById('entryPortal'))finishEntry()});
-year.textContent=new Date().getFullYear();renderProducts();observe();
+year.textContent=new Date().getFullYear();renderProducts();renderFirstVitrine();observe();
 </script>
 </body>
 </html>
