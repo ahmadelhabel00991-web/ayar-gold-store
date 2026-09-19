@@ -114,59 +114,42 @@ footer{background:#0d0b08;color:#cab98f;padding:55px 0 25px}.footerGrid{display:
 
 .insideTour{background:linear-gradient(180deg,#f7efe1,#fffaf2);padding:92px 0}.insideGrid{display:grid;grid-template-columns:1.03fr .97fr;gap:42px;align-items:center}.insideFrame{position:relative;background:#17120e;padding:13px;border-radius:30px;box-shadow:0 28px 70px #573b141f}.insideFrame img{width:100%;height:620px;object-fit:cover;border-radius:22px}.insideFrame:after{content:"";position:absolute;inset:13px;border-radius:22px;background:linear-gradient(180deg,transparent 52%,#0008);pointer-events:none}.insideBadge{position:absolute;z-index:2;right:28px;top:28px;background:#17120edc;color:#efd58b;border:1px solid #f0d79122;padding:9px 13px;border-radius:999px;font-size:12px;font-weight:900;backdrop-filter:blur(8px)}.insideCopy h2{font-size:clamp(38px,5vw,60px);line-height:1.08;margin:15px 0 18px}.insideCopy>p{font-size:17px;line-height:2;color:#6f6251}.insidePoints{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px}.insidePoints div{background:#fffdf7;border:1px solid #e3d4ba;padding:15px;border-radius:16px}.insidePoints b{display:block;margin-bottom:6px;color:#7d5a20}.insidePoints span{color:#746856;font-size:13px;line-height:1.7}
 
-/* First showcase — immersive vitrine */
-.showcaseOne{position:relative;min-height:100svh;background:#0b0907;color:#fff6df;padding:95px 0 72px;overflow:hidden;isolation:isolate}
-.showcaseOne:before{content:"";position:absolute;inset:-8%;background:linear-gradient(90deg,#080705e8,#08070572 48%,#080705d4),url('assets/interior-approved.jpg') center/cover no-repeat;filter:blur(2px) saturate(.9);transform:scale(1.08);z-index:-3}
-.showcaseOne:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 48% 44%,#e6bb5321 0 16%,transparent 43%),linear-gradient(180deg,#0007,transparent 24%,#0008 100%);z-index:-2}
-.showcaseIntro{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:24px}
-.showcaseIntro h2{font-size:clamp(38px,5vw,64px);line-height:1.03;margin:12px 0 0;letter-spacing:-1px}
-.showcaseIntro p{max-width:500px;color:#d1c09c;line-height:1.9;margin:0}
-.vitrineScene{--sx:50%;--sy:44%;position:relative;min-height:610px;border:1px solid #dfbd6948;border-radius:28px;background:linear-gradient(180deg,#ffffff0d,#00000042 42%,#030302c7),linear-gradient(135deg,#17120c,#070605);box-shadow:0 38px 100px #000b,inset 0 0 0 1px #fff1b20d;overflow:hidden;transform:translateY(28px) scale(.985);opacity:.45;transition:1s cubic-bezier(.2,.75,.2,1);touch-action:none;cursor:crosshair}
-.showcaseOne.inview .vitrineScene{transform:none;opacity:1}
-.vitrineScene:before{content:"";position:absolute;inset:20px;border:9px solid #9e742c;border-image:linear-gradient(135deg,#f0d17e,#93631f,#e3bd61) 1;box-shadow:inset 0 0 45px #0009,0 0 36px #c38f2c1d;pointer-events:none;z-index:4}
-.vitrineScene:after{content:"";position:absolute;inset:29px;background:linear-gradient(108deg,transparent 4%,#ffffff10 24%,transparent 39%,transparent 62%,#fff1bd0a 76%,transparent 91%);pointer-events:none;z-index:8}
-.vitrineTopLight{position:absolute;left:7%;right:7%;top:34px;height:3px;border-radius:99px;background:#9f7a37;box-shadow:0 0 10px #8b672c88;z-index:2;opacity:.48}.vitrineSpotlight{position:absolute;z-index:7;left:var(--sx);top:var(--sy);width:330px;height:330px;border-radius:50%;transform:translate(-50%,-50%);pointer-events:none;background:radial-gradient(circle,#fff8d843 0 9%,#ffe29a28 24%,#dcae4e16 45%,transparent 69%);box-shadow:0 0 54px #e8bd6040,inset 0 0 35px #fff3c61c;mix-blend-mode:screen;transition:left .055s linear,top .055s linear,opacity .28s ease;opacity:.92}.vitrineSpotlight:after{content:"";position:absolute;inset:44px;border-radius:50%;border:1px solid #fff3ca24;box-shadow:0 0 30px #eac26024}
-.vitrineShelf{position:absolute;left:5.5%;right:5.5%;bottom:72px;height:13px;background:linear-gradient(180deg,#edcb72,#8a5d20);box-shadow:0 8px 20px #0008,0 -16px 70px #d2a04428;z-index:2}
-.vitrineShelf:after{content:"";position:absolute;left:0;right:0;top:13px;height:45px;background:linear-gradient(#11100e,#050504);border-top:1px solid #e1bc5f55}
-.vitrineLabel{position:absolute;left:50%;bottom:20px;transform:translateX(-50%);z-index:7;padding:9px 16px;border:1px solid #e3c06a3b;border-radius:999px;background:#080706d9;color:#e8cd88;font-size:11px;font-weight:900;backdrop-filter:blur(10px);white-space:nowrap}
-.vitrineItems{position:absolute;z-index:3;inset:86px 7.5% 100px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:end}
-.vitrineItem{--lit:.12;position:relative;min-height:205px;border:0;background:transparent;color:#f7e8bd;padding:14px 10px 17px;border-radius:22px;opacity:calc(.10 + var(--lit)*.90);filter:brightness(calc(.28 + var(--lit)*1.02)) saturate(calc(.42 + var(--lit)*.68));transform:translateY(calc((1 - var(--lit))*5px)) scale(calc(.94 + var(--lit)*.06));transition:opacity .16s ease,filter .16s ease,transform .18s cubic-bezier(.2,.8,.2,1)}
-.vitrineItem:before{content:"";position:absolute;left:12%;right:12%;bottom:6px;height:20px;border-radius:50%;background:#000b;filter:blur(8px);transition:.35s}
-.vitrineItem:hover,.vitrineItem:focus-visible{outline:none;--lit:1}
-.vitrineScene.focusMode{transform:scale(1.035) translateY(-4px);box-shadow:0 48px 120px #000d,inset 0 0 0 1px #ffe49a20}
-.vitrineScene.focusMode .vitrineItem{opacity:.18;filter:blur(1px);transform:scale(.88);pointer-events:none}
-.vitrineScene.focusMode .vitrineItem.selected{opacity:1;filter:none;transform:translateY(-18px) scale(1.24);z-index:12}
-.vitrineScene.focusMode .vitrineItem.selected .jewelPedestal svg{transform:scale(1.12);filter:drop-shadow(0 18px 17px #000d) drop-shadow(0 0 36px #f0c55ea0)}
-.vitrineScene.focusMode:after{background:linear-gradient(108deg,transparent 7%,#ffffff1d 28%,transparent 43%,transparent 58%,#fff1bd17 76%,transparent 92%);animation:glassSweep .8s ease both}
-@keyframes glassSweep{from{transform:translateX(-12%);opacity:.25}to{transform:translateX(9%);opacity:1}}
-.vitrineItem.selected .vitrineItemText b{color:#ffe19a}
-.vitrineItem.selected .vitrineItemText span{color:#e8d6aa}
-.vitrineHero svg{transition:transform .35s ease}
-.vitrineHero.inspect svg{transform:scale(1.1) rotate(-2deg)}
-.vitrineProductDetail{animation:detailIn .28s ease}
-@keyframes detailIn{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:none}}
-.vitrineItem:hover:before,.vitrineItem:focus-visible:before{background:#d5a13a5c;filter:blur(14px)}
-.jewelPedestal{height:150px;display:grid;place-items:center;border-radius:80px 80px 24px 24px;background:radial-gradient(ellipse at 50% 88%,#e0ad4140 0 16%,transparent 47%),linear-gradient(180deg,transparent,#ffffff08);position:relative}
-.jewelPedestal svg{width:min(132px,72%);height:116px;overflow:visible;filter:drop-shadow(0 12px 13px #000b) drop-shadow(0 0 16px #d8a54044);transition:.35s}
-.vitrineItem:hover svg{transform:scale(1.08) rotate(-1deg);filter:drop-shadow(0 14px 15px #000c) drop-shadow(0 0 23px #efc76777)}
-.jewelPedestal:after{content:"";position:absolute;left:18%;right:18%;bottom:4px;height:6px;border-radius:50%;background:#e7c56a66;filter:blur(4px)}
-.vitrineItemText{position:relative;z-index:2;text-align:center;margin-top:4px;opacity:calc(.15 + var(--lit)*.85);transition:opacity .16s}.vitrineItemText b{display:block;font-size:16px;text-shadow:0 2px 10px #000}.vitrineItemText span{display:block;margin-top:4px;color:#bda976;font-size:10px}
-.vitrineHint{display:flex;align-items:center;justify-content:center;gap:9px;margin-top:18px;color:#c8b27e;font-size:12px}.vitrineHint i{width:7px;height:7px;border-radius:50%;background:#e5be5f;box-shadow:0 0 0 7px #e5be5f14;animation:vPulse 1.8s infinite}
-@keyframes vPulse{50%{box-shadow:0 0 0 12px #e5be5f00}}
-.vitrineShade{position:fixed;inset:0;z-index:89;background:#060504b3;backdrop-filter:blur(6px);opacity:0;pointer-events:none;transition:.35s}.vitrineShade.show{opacity:1;pointer-events:auto}
-.vitrinePanel{position:fixed;z-index:90;top:18px;bottom:18px;left:18px;width:min(520px,calc(100vw - 36px));background:#fffaf1;color:#1d160d;border:1px solid #e1c27b;border-radius:28px;box-shadow:0 35px 100px #000b;transform:translateX(calc(-100% - 40px)) scale(.97);opacity:0;transition:.42s cubic-bezier(.2,.8,.2,1);display:grid;grid-template-rows:auto 1fr;overflow:hidden}
+/* First showcase — actual interior view */
+.realVitrineExperience{position:relative;height:100svh;min-height:680px;background:#080604;overflow:hidden;isolation:isolate;color:#fff8e8}
+.realVitrineView{position:absolute;inset:-3%;background:linear-gradient(180deg,#00000012,#0000005c),url('assets/interior-approved.jpg') center/cover no-repeat;transform:scale(1.02);transform-origin:76% 60%;transition:transform 2.1s cubic-bezier(.18,.78,.16,1),filter 1.2s ease;filter:brightness(.88) saturate(.98)}
+.realVitrineExperience.approach .realVitrineView{transform:scale(1.42) translate(-5.6%,2.5%);filter:brightness(.98) saturate(1.04)}
+.realVitrineExperience:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,#0009 0%,transparent 20%,transparent 72%,#000b 100%),radial-gradient(circle at 77% 57%,transparent 0 19%,#00000012 39%,#0000005a 100%);z-index:2}
+.realVitrineTop{position:absolute;z-index:6;top:88px;right:6%;max-width:560px;opacity:1;transition:.55s ease}
+.realVitrineTop .sectionTag{color:#e5c46f}
+.realVitrineTop h2{margin:12px 0 8px;font-size:clamp(33px,5vw,60px);line-height:1.06}
+.realVitrineTop p{margin:0;color:#d8caad;line-height:1.8;font-size:14px}
+.realVitrineExperience.approach .realVitrineTop{opacity:.18;transform:translateY(-12px)}
+.firstCaseZone{position:absolute;z-index:5;right:6.5%;top:31%;width:42%;height:48%;opacity:0;transform:translateY(20px) scale(.97);transition:opacity .75s ease .7s,transform .9s cubic-bezier(.2,.8,.2,1) .62s;pointer-events:none}
+.realVitrineExperience.approach .firstCaseZone{opacity:1;transform:none;pointer-events:auto}
+.caseGlassGlow{position:absolute;inset:0;border-radius:28px;background:linear-gradient(110deg,#ffffff00,#fff7d60c 33%,transparent 47%,#f2cd7410 69%,transparent 84%);box-shadow:inset 0 0 0 1px #fff6d816,inset 0 -20px 55px #e8b95412;pointer-events:none}
+.caseShelfLine{position:absolute;left:8%;right:8%;bottom:10%;height:2px;background:linear-gradient(90deg,transparent,#e7bd5d99,transparent);box-shadow:0 0 20px #dba64155;pointer-events:none}
+.caseJewels{position:absolute;inset:7% 7% 13%;display:grid;grid-template-columns:repeat(4,1fr);gap:2%;align-items:end}
+.caseJewel{--delay:0s;position:relative;border:0;background:transparent;color:#f7e8bd;min-width:0;padding:0 4px 8px;opacity:0;transform:translateY(18px) scale(.88);transition:opacity .55s ease var(--delay),transform .55s cubic-bezier(.2,.8,.2,1) var(--delay),filter .25s ease;filter:drop-shadow(0 13px 12px #000c);cursor:pointer}
+.realVitrineExperience.approach .caseJewel{opacity:1;transform:none}
+.caseJewel:hover,.caseJewel:focus-visible{outline:none;transform:translateY(-9px) scale(1.07);filter:drop-shadow(0 16px 14px #000d) drop-shadow(0 0 24px #e8ba586e)}
+.caseJewel svg{width:100%;height:118px;overflow:visible}
+.caseJewelLabel{display:inline-block;margin-top:5px;padding:6px 9px;border-radius:999px;background:#0e0b08c9;border:1px solid #e2be6633;color:#efd99c;font-size:10px;font-weight:900;backdrop-filter:blur(7px);white-space:nowrap}
+.caseJewel small{display:block;color:#ccb77e;font-size:8px;margin-top:4px}
+.realCaseHint{position:absolute;z-index:6;right:50%;bottom:24px;transform:translateX(50%);padding:9px 13px;border-radius:999px;background:#0c0907bf;border:1px solid #e4c46c2c;color:#ddca97;font-size:11px;backdrop-filter:blur(9px);opacity:0;transition:.5s ease 1.15s}
+.realVitrineExperience.approach .realCaseHint{opacity:1}
+.vitrineShade{position:fixed;inset:0;z-index:89;background:#0605049c;backdrop-filter:blur(5px);opacity:0;pointer-events:none;transition:.35s}.vitrineShade.show{opacity:1;pointer-events:auto}
+.vitrinePanel{position:fixed;z-index:90;top:22px;bottom:22px;left:22px;width:min(500px,calc(100vw - 44px));background:#fffaf1;color:#1d160d;border:1px solid #e1c27b;border-radius:28px;box-shadow:0 35px 100px #000c;transform:translateX(calc(-100% - 50px));opacity:0;transition:.42s cubic-bezier(.2,.8,.2,1);display:grid;grid-template-rows:auto 1fr;overflow:hidden}
 .vitrinePanel.show{transform:none;opacity:1}
-.vitrinePanelHead{padding:20px 20px 15px;border-bottom:1px solid #e6d6bb;background:linear-gradient(180deg,#fffdf8,#f8efdf)}
-.vitrinePanelHeadTop{display:flex;justify-content:space-between;gap:14px;align-items:center}.vitrinePanelHead h2{margin:10px 0 4px;font-size:31px}.vitrinePanelHead p{margin:0;color:#796c58;font-size:12px}.vitrineClose{width:40px;height:40px;border:0;border-radius:50%;background:#eee0c7;color:#4e3d25;font-size:22px}
+.vitrinePanelHead{padding:19px 20px 14px;border-bottom:1px solid #e6d6bb;background:linear-gradient(180deg,#fffdf8,#f8efdf)}
+.vitrinePanelHeadTop{display:flex;justify-content:space-between;gap:14px;align-items:center}.vitrinePanelHead h2{margin:9px 0 3px;font-size:30px}.vitrinePanelHead p{margin:0;color:#796c58;font-size:12px}.vitrineClose{width:40px;height:40px;border:0;border-radius:50%;background:#eee0c7;color:#4e3d25;font-size:22px}
 .vitrinePanelBody{overflow:auto;padding:17px}
-.vitrineHero{height:210px;border-radius:22px;background:radial-gradient(circle at 50% 70%,#e0b34d42,transparent 35%),linear-gradient(145deg,#21170e,#090706);display:grid;place-items:center;position:relative;overflow:hidden}
-.vitrineHero:after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 15%,#fff2bd12 32%,transparent 47%)}.vitrineHero svg{width:160px;height:135px;filter:drop-shadow(0 17px 16px #000b) drop-shadow(0 0 24px #e4b64e66)}
+.vitrineHero{height:195px;border-radius:22px;background:radial-gradient(circle at 50% 69%,#e0b34d42,transparent 35%),linear-gradient(145deg,#21170e,#090706);display:grid;place-items:center;position:relative;overflow:hidden}.vitrineHero svg{width:155px;height:130px;filter:drop-shadow(0 17px 16px #000b) drop-shadow(0 0 24px #e4b64e66)}
 .vitrineSwitch{display:flex;gap:8px;overflow:auto;padding:14px 1px 4px;scrollbar-width:none}.vitrineSwitch::-webkit-scrollbar{display:none}.vitrineSwitch button{flex:0 0 auto;border:1px solid #dfc99f;background:#fffdf8;color:#665641;border-radius:999px;padding:8px 11px;font-weight:800;font-size:11px}.vitrineSwitch button.active{background:#20170d;color:#f0d185;border-color:#20170d}
-.vitrineProductName{display:flex;justify-content:space-between;gap:12px;align-items:end;margin:20px 0 12px}.vitrineProductName h3{font-size:27px;margin:0}.vitrineProductName small{color:#8a7a62}
+.vitrineProductName{display:flex;justify-content:space-between;gap:12px;align-items:end;margin:18px 0 12px}.vitrineProductName h3{font-size:26px;margin:0}.vitrineProductName small{color:#8a7a62}.vitrineProductName>b{color:#805c20}
 .vitrineSpecs{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.vitrineSpecs div{padding:13px;border:1px solid #e7d8bf;background:#fffdf8;border-radius:15px}.vitrineSpecs span{display:block;color:#8b7d68;font-size:10px;margin-bottom:4px}.vitrineSpecs b{font-size:16px}
 .vitrineBreakdown{margin-top:14px;border-top:1px solid #e4d4b9}.vitrineBreakdown div{display:flex;justify-content:space-between;gap:12px;padding:11px 2px;border-bottom:1px solid #eee1cc;color:#6c5d48}.vitrineBreakdown div:last-child{font-weight:900;color:#805c20;font-size:18px}
 .vitrineActions{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:16px}.vitrineActions button,.vitrineActions a{border:0;border-radius:999px;padding:12px;text-align:center;font-weight:900}.vitrineActions button{background:linear-gradient(145deg,#d8b45a,#9a6a20);color:#1d1409}.vitrineActions a{background:#20170d;color:#f0d184}
-@media(max-width:780px){.showcaseOne{padding:75px 0 56px}.showcaseIntro{display:block}.showcaseIntro p{margin-top:12px}.vitrineScene{min-height:600px;border-radius:22px}.vitrineItems{inset:72px 8% 96px;grid-template-columns:repeat(2,1fr);gap:5px 10px}.vitrineItem{min-height:150px;padding:4px}.jewelPedestal{height:115px}.jewelPedestal svg{height:88px}.vitrineItemText b{font-size:14px}.vitrinePanel{left:8px;right:8px;bottom:8px;top:auto;width:auto;max-height:86svh;border-radius:26px 26px 18px 18px;transform:translateY(105%) scale(.98)}.vitrinePanel.show{transform:none}.vitrineHero{height:175px}.vitrinePanelHead h2{font-size:26px}}
+@media(max-width:760px){.realVitrineExperience{min-height:720px}.realVitrineView{background-position:58% center;transform-origin:73% 58%}.realVitrineExperience.approach .realVitrineView{transform:scale(1.55) translate(-8%,2%)}.realVitrineTop{top:72px;right:18px;left:18px}.realVitrineTop h2{font-size:36px}.realVitrineTop p{font-size:12px}.firstCaseZone{right:2%;top:32%;width:64%;height:47%}.caseJewels{grid-template-columns:repeat(2,1fr);inset:4% 4% 12%;gap:2% 5%}.caseJewel svg{height:86px}.caseJewelLabel{font-size:9px}.realCaseHint{bottom:14px;max-width:calc(100% - 24px);white-space:nowrap}.vitrinePanel{left:8px;right:8px;top:auto;bottom:8px;width:auto;max-height:87svh;border-radius:26px 26px 18px 18px;transform:translateY(105%)}.vitrinePanel.show{transform:none}.vitrineHero{height:165px}}
 
 @media(max-width:900px){
  .links{display:none}.menu{display:block}.heroContent,.storyGrid,.visitGrid{grid-template-columns:1fr}.heroContent{padding-top:140px}.heroPanel{justify-self:start}.statsGrid{grid-template-columns:repeat(2,1fr)}.stat:nth-child(3){border-left:0;border-top:1px solid #f0d79116}.stat:nth-child(4){border-top:1px solid #f0d79116}.productRail{grid-template-columns:1fr 1fr}.storyGrid{gap:35px}.mediaFrame img{height:480px}.footerGrid{grid-template-columns:1fr 1fr}
@@ -231,21 +214,19 @@ footer{background:#0d0b08;color:#cab98f;padding:55px 0 25px}.footerGrid{display:
   </div>
 </section>
 
-<section class="showcaseOne" id="first-vitrine" aria-label="الفترينة الأولى">
-  <div class="container">
-    <div class="showcaseIntro">
-      <div><span class="sectionTag" style="color:#e5c46f">الفترينة الأولى</span><h2>اقترب من الذهب.<br>واختر النوع بلمسة.</h2></div>
-      <p>هذه أول فترينة بعد الدخول. المعروض داخلها مرتبط بمنتجات المتجر، واضغط على أي نوع لتظهر تفاصيله بهدوء من دون مغادرة المشهد.</p>
-    </div>
-    <div class="vitrineScene" id="vitrineScene">
-      <div class="vitrineTopLight"></div>
-      <div class="vitrineSpotlight" id="vitrineSpotlight"></div>
-      <div class="vitrineItems" id="vitrineItems"></div>
-      <div class="vitrineShelf"></div>
-      <div class="vitrineLabel">مجوهرات أبو معاذ • الفترينة 01</div>
-    </div>
-    <div class="vitrineHint"><i></i><span>حرّك إصبعك على الزجاج لتسلّط الضوء، ثم اضغط على القطعة</span></div>
+<section class="realVitrineExperience" id="first-vitrine" aria-label="الاقتراب من الفترينة الأولى">
+  <div class="realVitrineView" aria-hidden="true"></div>
+  <div class="realVitrineTop">
+    <span class="sectionTag">داخل المحل</span>
+    <h2>الفترينة الأولى<br>كما تراها عند الدخول.</h2>
+    <p>نقترب من الفترينة الموجودة داخل المحل نفسه، ثم تصبح القطع داخلها قابلة للمس.</p>
   </div>
+  <div class="firstCaseZone" id="firstCaseZone">
+    <div class="caseGlassGlow"></div>
+    <div class="caseJewels" id="vitrineItems"></div>
+    <div class="caseShelfLine"></div>
+  </div>
+  <div class="realCaseHint">المس نوع المجوهرات داخل الفترينة لعرض قطعه وتفاصيله</div>
 </section>
 
 <div class="vitrineShade" id="vitrineShade"></div>
@@ -363,74 +344,53 @@ function renderProducts(){
 }
 
 function jewelIcon(cat){
- const common='fill="none" stroke="url(#g)" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"';
- const grad='<defs><linearGradient id="g" x1="0" x2="1"><stop stop-color="#f6dda0"/><stop offset=".5" stop-color="#c9942e"/><stop offset="1" stop-color="#ffe9a8"/></linearGradient></defs>';
+ const common='fill="none" stroke="url(#g)" stroke-width="4.15" stroke-linecap="round" stroke-linejoin="round"';
+ const grad='<defs><linearGradient id="g" x1="0" x2="1"><stop stop-color="#fff0b2"/><stop offset=".48" stop-color="#c78f26"/><stop offset="1" stop-color="#ffe7a0"/></linearGradient></defs>';
  let body='';
- if(cat.includes('خات')) body='<circle cx="60" cy="66" r="27" '+common+'/><path d="M43 45l17-18 17 18-17 8z" '+common+'/><path d="M50 36h20" '+common+'/>';
- else if(cat.includes('سلاسل')||cat.includes('سلسل')) body='<path d="M19 34c16 57 66 57 82 0" '+common+'/><path d="M31 42c10 36 48 36 58 0" '+common+'/><path d="M54 86l6 12 6-12" '+common+'/>';
+ if(cat.includes('خات')) body='<circle cx="60" cy="67" r="27" '+common+'/><path d="M43 45l17-18 17 18-17 8z" '+common+'/><path d="M50 36h20" '+common+'/>';
+ else if(cat.includes('سلاسل')||cat.includes('سلسل')) body='<path d="M18 34c17 58 67 58 84 0" '+common+'/><path d="M31 42c11 36 47 36 58 0" '+common+'/><path d="M54 86l6 12 6-12" '+common+'/>';
  else if(cat.includes('أساور')||cat.includes('اساور')) body='<ellipse cx="60" cy="62" rx="42" ry="27" '+common+'/><ellipse cx="60" cy="62" rx="31" ry="18" '+common+'/><circle cx="97" cy="58" r="5" fill="#ffe28a"/>';
  else if(cat.includes('أقراط')||cat.includes('اقراط')) body='<path d="M38 28c0 23-14 27-14 44 0 13 9 22 20 22s20-9 20-22c0-17-14-21-14-44" '+common+'/><path d="M78 28c0 23-14 27-14 44 0 13 9 22 20 22s20-9 20-22c0-17-14-21-14-44" '+common+'/>';
- else if(cat.includes('سبائك')||cat.includes('سبيكة')) body='<path d="M23 38h74l10 49H13z" '+common+'/><path d="M33 51h54l5 22H28z" '+common+'/><path d="M49 62h22" '+common+'/>';
- else if(cat.includes('أطقم')||cat.includes('اطقم')) body='<path d="M20 36c11 43 69 43 80 0" '+common+'/><circle cx="60" cy="83" r="15" '+common+'/><path d="M53 79l7-10 7 10-7 7z" '+common+'/>';
- else body='<circle cx="60" cy="60" r="31" '+common+'/><path d="M60 20v80M20 60h80" '+common+'/>';
+ else if(cat.includes('سبائك')||cat.includes('سبيكة')) body='<path d="M23 38h74l10 49H13z" '+common+'/><path d="M33 51h54l5 22H28z" '+common+'/>';
+ else body='<path d="M20 36c11 43 69 43 80 0" '+common+'/><circle cx="60" cy="83" r="15" '+common+'/>';
  return '<svg viewBox="0 0 120 120" aria-hidden="true">'+grad+body+'</svg>';
 }
 function availableVitrineCategories(){
- const preferred=['خواتم','سلاسل','أساور','أقراط','أطقم','سبائك'];
+ const preferred=['خواتم','سلاسل','أساور','أقراط'];
  const available=[...new Set(db.products.filter(p=>Number(p.stock||0)>0).map(p=>p.cat).filter(Boolean))];
- return preferred.filter(x=>available.includes(x)).concat(available.filter(x=>!preferred.includes(x))).slice(0,6);
+ return preferred.filter(x=>available.includes(x)).concat(available.filter(x=>!preferred.includes(x))).slice(0,4);
 }
 function renderFirstVitrine(){
  const cats=availableVitrineCategories();
- vitrineItems.innerHTML=cats.length?cats.map(cat=>{
-   const count=db.products.filter(p=>p.cat===cat&&Number(p.stock||0)>0).reduce((s,p)=>s+Number(p.stock||0),0);
-   return '<button class="vitrineItem" type="button" data-cat="'+cat.replace(/"/g,'&quot;')+'"><div class="jewelPedestal">'+jewelIcon(cat)+'</div><div class="vitrineItemText"><b>'+cat+'</b><span>'+count+' قطعة متاحة</span></div></button>'
- }).join(''):'<div style="grid-column:1/-1;text-align:center;color:#cbb98d">لا توجد قطع متاحة في الفترينة حاليًا.</div>';
- vitrineItems.querySelectorAll('.vitrineItem').forEach(btn=>btn.addEventListener('click',()=>openVitrineType(btn.dataset.cat)));
- const firstShowcase=document.getElementById('first-vitrine');
- const io=new IntersectionObserver(es=>es.forEach(e=>firstShowcase.classList.toggle('inview',e.isIntersecting)),{threshold:.2});
- io.observe(firstShowcase);
+ vitrineItems.innerHTML=cats.map((cat,i)=>{
+  const count=db.products.filter(p=>p.cat===cat&&Number(p.stock||0)>0).reduce((s,p)=>s+Number(p.stock||0),0);
+  return '<button class="caseJewel" style="--delay:'+(0.82+i*.12)+'s" type="button" data-cat="'+cat.replace(/"/g,'&quot;')+'">'+jewelIcon(cat)+'<span class="caseJewelLabel">'+cat+'</span><small>'+count+' قطعة</small></button>';
+ }).join('');
+ vitrineItems.querySelectorAll('.caseJewel').forEach(btn=>btn.addEventListener('click',()=>openVitrineType(btn.dataset.cat)));
+ const first=document.getElementById('first-vitrine');
+ const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)setTimeout(()=>first.classList.add('approach'),180)}),{threshold:.45});
+ io.observe(first);
 }
 let activeVitrineList=[];
-let vitrineFocusTimer=null;
 function openVitrineType(cat){
  activeVitrineList=db.products.filter(p=>p.cat===cat&&Number(p.stock||0)>0);
  if(!activeVitrineList.length)return;
- clearTimeout(vitrineFocusTimer);
- document.querySelectorAll('.vitrineItem').forEach(b=>b.classList.toggle('selected',b.dataset.cat===cat));
- vitrineScene.classList.add('focusMode');
  vitrinePanelTitle.textContent=cat;
- vitrinePanelSub.textContent=activeVitrineList.length+' تصميم متاح داخل هذه الفترينة';
- vitrinePanelBody.innerHTML='<div class="vitrineHero inspect">'+jewelIcon(cat)+'</div><div class="vitrineSwitch">'+activeVitrineList.map((p,i)=>'<button type="button" data-vpid="'+p.id+'" class="'+(i===0?'active':'')+'">'+p.name+'</button>').join('')+'</div><div id="vitrineProductDetail" class="vitrineProductDetail"></div>';
+ vitrinePanelSub.textContent=activeVitrineList.length+' تصميم متاح داخل الفترينة الأولى';
+ vitrinePanelBody.innerHTML='<div class="vitrineHero">'+jewelIcon(cat)+'</div><div class="vitrineSwitch">'+activeVitrineList.map((p,i)=>'<button type="button" data-vpid="'+p.id+'" class="'+(i===0?'active':'')+'">'+p.name+'</button>').join('')+'</div><div id="vitrineProductDetail"></div>';
  vitrinePanelBody.querySelectorAll('[data-vpid]').forEach(b=>b.addEventListener('click',()=>renderVitrineProduct(Number(b.dataset.vpid))));
  renderVitrineProduct(activeVitrineList[0].id);
- vitrineFocusTimer=setTimeout(()=>{vitrinePanel.classList.add('show');vitrineShade.classList.add('show')},520);
+ vitrinePanel.classList.add('show');vitrineShade.classList.add('show');
 }
 function renderVitrineProduct(id){
  const p=activeVitrineList.find(x=>Number(x.id)===Number(id));if(!p)return;
  vitrinePanelBody.querySelectorAll('[data-vpid]').forEach(b=>b.classList.toggle('active',Number(b.dataset.vpid)===Number(id)));
  const goldValue=rate(p.k)*p.w,workValue=(p.work||0)*p.w+(p.fixed||0),final=price(p);
  const ask=waNum?waUrl+'?text='+encodeURIComponent('مرحبًا، أريد تفاصيل '+p.name+' - '+(p.sku||'')):'#';
- const detail=document.getElementById('vitrineProductDetail');
- detail.classList.remove('vitrineProductDetail');void detail.offsetWidth;detail.classList.add('vitrineProductDetail');
- detail.innerHTML='<div class="vitrineProductName"><div><h3>'+p.name+'</h3><small>'+(p.sku||'قطعة من الفترينة الأولى')+'</small></div><b>'+money(final)+'</b></div><div class="vitrineSpecs"><div><span>العيار</span><b>'+p.k+'K</b></div><div><span>الوزن</span><b>'+p.w+' غ</b></div><div><span>سعر الجرام</span><b>'+money(rate(p.k))+'</b></div><div><span>المتوفر</span><b>'+p.stock+' قطعة</b></div></div><div class="vitrineBreakdown"><div><span>قيمة الذهب</span><b>'+money(goldValue)+'</b></div><div><span>المصنعية</span><b>'+money(workValue)+'</b></div><div><span>السعر النهائي</span><b>'+money(final)+'</b></div></div><div class="vitrineActions"><button type="button" onclick="addOrder('+p.id+')">اطلب القطعة</button><a target="_blank" href="'+ask+'">استفسر واتساب</a></div>';
+ document.getElementById('vitrineProductDetail').innerHTML='<div class="vitrineProductName"><div><h3>'+p.name+'</h3><small>'+(p.sku||'قطعة من الفترينة الأولى')+'</small></div><b>'+money(final)+'</b></div><div class="vitrineSpecs"><div><span>العيار</span><b>'+p.k+'K</b></div><div><span>الوزن</span><b>'+p.w+' غ</b></div><div><span>سعر الجرام</span><b>'+money(rate(p.k))+'</b></div><div><span>المتوفر</span><b>'+p.stock+' قطعة</b></div></div><div class="vitrineBreakdown"><div><span>قيمة الذهب</span><b>'+money(goldValue)+'</b></div><div><span>المصنعية</span><b>'+money(workValue)+'</b></div><div><span>السعر النهائي</span><b>'+money(final)+'</b></div></div><div class="vitrineActions"><button type="button" onclick="addOrder('+p.id+')">اطلب القطعة</button><a target="_blank" href="'+ask+'">استفسر واتساب</a></div>';
 }
-function closeVitrine(){clearTimeout(vitrineFocusTimer);vitrinePanel.classList.remove('show');vitrineShade.classList.remove('show');vitrineScene.classList.remove('focusMode');document.querySelectorAll('.vitrineItem').forEach(b=>{b.classList.remove('selected');b.style.setProperty('--lit','.12')});vitrineScene.style.setProperty('--sx','50%');vitrineScene.style.setProperty('--sy','44%')}
+function closeVitrine(){vitrinePanel.classList.remove('show');vitrineShade.classList.remove('show')}
 vitrineClose.addEventListener('click',closeVitrine);vitrineShade.addEventListener('click',closeVitrine);
-function illuminateVitrine(clientX,clientY){
- if(vitrineScene.classList.contains('focusMode'))return;
- const r=vitrineScene.getBoundingClientRect(),x=Math.max(0,Math.min(r.width,clientX-r.left)),y=Math.max(0,Math.min(r.height,clientY-r.top));
- vitrineScene.style.setProperty('--sx',x+'px');vitrineScene.style.setProperty('--sy',y+'px');
- document.querySelectorAll('.vitrineItem').forEach(b=>{
-   const br=b.getBoundingClientRect(),cx=br.left+br.width/2,cy=br.top+br.height*.48,dist=Math.hypot(clientX-cx,clientY-cy);
-   const lit=Math.max(.06,Math.min(1,1-dist/230));
-   b.style.setProperty('--lit',lit.toFixed(3));
- });
-}
-vitrineScene.addEventListener('pointerenter',e=>illuminateVitrine(e.clientX,e.clientY));
-vitrineScene.addEventListener('pointerdown',e=>{illuminateVitrine(e.clientX,e.clientY);try{vitrineScene.setPointerCapture(e.pointerId)}catch(_){}});
-vitrineScene.addEventListener('pointermove',e=>illuminateVitrine(e.clientX,e.clientY));
-vitrineScene.addEventListener('pointerleave',()=>{if(vitrineScene.classList.contains('focusMode'))return;document.querySelectorAll('.vitrineItem').forEach(b=>b.style.setProperty('--lit','.12'));vitrineScene.style.setProperty('--sx','50%');vitrineScene.style.setProperty('--sy','44%')});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&vitrinePanel.classList.contains('show'))closeVitrine()});
 
 window.openProduct=id=>{const p=db.products.find(x=>x.id===id);if(!p)return;drawerTitle.textContent=p.name;drawerBody.innerHTML='<div class="detailVisual">◆</div><div class="detailMeta"><span>'+p.cat+'</span><span>'+p.k+'K</span><span>'+p.w+' غ</span><span>'+(p.sku||'')+'</span></div><div class="detailPrice">'+money(price(p))+'</div><p style="color:#736652;line-height:1.8">قيمة الذهب '+money(rate(p.k)*p.w)+' • المصنعية '+money((p.work||0)*p.w+(p.fixed||0))+'</p><div class="detailActions"><button onclick="addOrder('+p.id+')">اطلب القطعة</button><a target="_blank" href="'+(waNum?waUrl+'?text='+encodeURIComponent('مرحبًا، أريد الاستفسار عن '+p.name+' '+(p.sku||'')):'#')+'">واتساب</a></div>';drawer.classList.add('show');drawerShade.classList.add('show')};
