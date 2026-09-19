@@ -121,18 +121,18 @@ footer{background:#0d0b08;color:#cab98f;padding:55px 0 25px}.footerGrid{display:
 .showcaseIntro{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:24px}
 .showcaseIntro h2{font-size:clamp(38px,5vw,64px);line-height:1.03;margin:12px 0 0;letter-spacing:-1px}
 .showcaseIntro p{max-width:500px;color:#d1c09c;line-height:1.9;margin:0}
-.vitrineScene{position:relative;min-height:610px;border:1px solid #dfbd6948;border-radius:28px;background:linear-gradient(180deg,#ffffff13,#ffffff05 36%,#00000025),linear-gradient(135deg,#2a2116,#0e0b08);box-shadow:0 38px 100px #000b,inset 0 0 0 1px #fff1b20d;overflow:hidden;transform:translateY(28px) scale(.985);opacity:.45;transition:1s cubic-bezier(.2,.75,.2,1)}
+.vitrineScene{--sx:50%;--sy:44%;position:relative;min-height:610px;border:1px solid #dfbd6948;border-radius:28px;background:linear-gradient(180deg,#ffffff0d,#00000042 42%,#030302c7),linear-gradient(135deg,#17120c,#070605);box-shadow:0 38px 100px #000b,inset 0 0 0 1px #fff1b20d;overflow:hidden;transform:translateY(28px) scale(.985);opacity:.45;transition:1s cubic-bezier(.2,.75,.2,1);touch-action:none;cursor:crosshair}
 .showcaseOne.inview .vitrineScene{transform:none;opacity:1}
 .vitrineScene:before{content:"";position:absolute;inset:20px;border:9px solid #9e742c;border-image:linear-gradient(135deg,#f0d17e,#93631f,#e3bd61) 1;box-shadow:inset 0 0 45px #0009,0 0 36px #c38f2c1d;pointer-events:none;z-index:4}
-.vitrineScene:after{content:"";position:absolute;inset:29px;background:linear-gradient(108deg,transparent 4%,#ffffff14 24%,transparent 39%,transparent 62%,#fff1bd0f 76%,transparent 91%);pointer-events:none;z-index:5}
-.vitrineTopLight{position:absolute;left:7%;right:7%;top:34px;height:5px;border-radius:99px;background:#f7d985;box-shadow:0 0 18px #f3c85e,0 0 62px #d49a2c88;z-index:2}
+.vitrineScene:after{content:"";position:absolute;inset:29px;background:linear-gradient(108deg,transparent 4%,#ffffff10 24%,transparent 39%,transparent 62%,#fff1bd0a 76%,transparent 91%);pointer-events:none;z-index:8}
+.vitrineTopLight{position:absolute;left:7%;right:7%;top:34px;height:3px;border-radius:99px;background:#9f7a37;box-shadow:0 0 10px #8b672c88;z-index:2;opacity:.48}.vitrineSpotlight{position:absolute;z-index:7;left:var(--sx);top:var(--sy);width:330px;height:330px;border-radius:50%;transform:translate(-50%,-50%);pointer-events:none;background:radial-gradient(circle,#fff8d843 0 9%,#ffe29a28 24%,#dcae4e16 45%,transparent 69%);box-shadow:0 0 54px #e8bd6040,inset 0 0 35px #fff3c61c;mix-blend-mode:screen;transition:left .055s linear,top .055s linear,opacity .28s ease;opacity:.92}.vitrineSpotlight:after{content:"";position:absolute;inset:44px;border-radius:50%;border:1px solid #fff3ca24;box-shadow:0 0 30px #eac26024}
 .vitrineShelf{position:absolute;left:5.5%;right:5.5%;bottom:72px;height:13px;background:linear-gradient(180deg,#edcb72,#8a5d20);box-shadow:0 8px 20px #0008,0 -16px 70px #d2a04428;z-index:2}
 .vitrineShelf:after{content:"";position:absolute;left:0;right:0;top:13px;height:45px;background:linear-gradient(#11100e,#050504);border-top:1px solid #e1bc5f55}
 .vitrineLabel{position:absolute;left:50%;bottom:20px;transform:translateX(-50%);z-index:7;padding:9px 16px;border:1px solid #e3c06a3b;border-radius:999px;background:#080706d9;color:#e8cd88;font-size:11px;font-weight:900;backdrop-filter:blur(10px);white-space:nowrap}
 .vitrineItems{position:absolute;z-index:3;inset:86px 7.5% 100px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:end}
-.vitrineItem{position:relative;min-height:205px;border:0;background:transparent;color:#f7e8bd;padding:14px 10px 17px;border-radius:22px;transition:.35s cubic-bezier(.2,.8,.2,1)}
+.vitrineItem{--lit:.12;position:relative;min-height:205px;border:0;background:transparent;color:#f7e8bd;padding:14px 10px 17px;border-radius:22px;opacity:calc(.10 + var(--lit)*.90);filter:brightness(calc(.28 + var(--lit)*1.02)) saturate(calc(.42 + var(--lit)*.68));transform:translateY(calc((1 - var(--lit))*5px)) scale(calc(.94 + var(--lit)*.06));transition:opacity .16s ease,filter .16s ease,transform .18s cubic-bezier(.2,.8,.2,1)}
 .vitrineItem:before{content:"";position:absolute;left:12%;right:12%;bottom:6px;height:20px;border-radius:50%;background:#000b;filter:blur(8px);transition:.35s}
-.vitrineItem:hover,.vitrineItem:focus-visible{transform:translateY(-10px);outline:none}
+.vitrineItem:hover,.vitrineItem:focus-visible{outline:none;--lit:1}
 .vitrineScene.focusMode{transform:scale(1.035) translateY(-4px);box-shadow:0 48px 120px #000d,inset 0 0 0 1px #ffe49a20}
 .vitrineScene.focusMode .vitrineItem{opacity:.18;filter:blur(1px);transform:scale(.88);pointer-events:none}
 .vitrineScene.focusMode .vitrineItem.selected{opacity:1;filter:none;transform:translateY(-18px) scale(1.24);z-index:12}
@@ -150,7 +150,7 @@ footer{background:#0d0b08;color:#cab98f;padding:55px 0 25px}.footerGrid{display:
 .jewelPedestal svg{width:min(132px,72%);height:116px;overflow:visible;filter:drop-shadow(0 12px 13px #000b) drop-shadow(0 0 16px #d8a54044);transition:.35s}
 .vitrineItem:hover svg{transform:scale(1.08) rotate(-1deg);filter:drop-shadow(0 14px 15px #000c) drop-shadow(0 0 23px #efc76777)}
 .jewelPedestal:after{content:"";position:absolute;left:18%;right:18%;bottom:4px;height:6px;border-radius:50%;background:#e7c56a66;filter:blur(4px)}
-.vitrineItemText{position:relative;z-index:2;text-align:center;margin-top:4px}.vitrineItemText b{display:block;font-size:16px}.vitrineItemText span{display:block;margin-top:4px;color:#bda976;font-size:10px}
+.vitrineItemText{position:relative;z-index:2;text-align:center;margin-top:4px;opacity:calc(.15 + var(--lit)*.85);transition:opacity .16s}.vitrineItemText b{display:block;font-size:16px;text-shadow:0 2px 10px #000}.vitrineItemText span{display:block;margin-top:4px;color:#bda976;font-size:10px}
 .vitrineHint{display:flex;align-items:center;justify-content:center;gap:9px;margin-top:18px;color:#c8b27e;font-size:12px}.vitrineHint i{width:7px;height:7px;border-radius:50%;background:#e5be5f;box-shadow:0 0 0 7px #e5be5f14;animation:vPulse 1.8s infinite}
 @keyframes vPulse{50%{box-shadow:0 0 0 12px #e5be5f00}}
 .vitrineShade{position:fixed;inset:0;z-index:89;background:#060504b3;backdrop-filter:blur(6px);opacity:0;pointer-events:none;transition:.35s}.vitrineShade.show{opacity:1;pointer-events:auto}
@@ -239,11 +239,12 @@ footer{background:#0d0b08;color:#cab98f;padding:55px 0 25px}.footerGrid{display:
     </div>
     <div class="vitrineScene" id="vitrineScene">
       <div class="vitrineTopLight"></div>
+      <div class="vitrineSpotlight" id="vitrineSpotlight"></div>
       <div class="vitrineItems" id="vitrineItems"></div>
       <div class="vitrineShelf"></div>
       <div class="vitrineLabel">مجوهرات أبو معاذ • الفترينة 01</div>
     </div>
-    <div class="vitrineHint"><i></i><span>المس نوعًا من المجوهرات لعرض التفاصيل</span></div>
+    <div class="vitrineHint"><i></i><span>حرّك إصبعك على الزجاج لتسلّط الضوء، ثم اضغط على القطعة</span></div>
   </div>
 </section>
 
@@ -414,10 +415,22 @@ function renderVitrineProduct(id){
  detail.classList.remove('vitrineProductDetail');void detail.offsetWidth;detail.classList.add('vitrineProductDetail');
  detail.innerHTML='<div class="vitrineProductName"><div><h3>'+p.name+'</h3><small>'+(p.sku||'قطعة من الفترينة الأولى')+'</small></div><b>'+money(final)+'</b></div><div class="vitrineSpecs"><div><span>العيار</span><b>'+p.k+'K</b></div><div><span>الوزن</span><b>'+p.w+' غ</b></div><div><span>سعر الجرام</span><b>'+money(rate(p.k))+'</b></div><div><span>المتوفر</span><b>'+p.stock+' قطعة</b></div></div><div class="vitrineBreakdown"><div><span>قيمة الذهب</span><b>'+money(goldValue)+'</b></div><div><span>المصنعية</span><b>'+money(workValue)+'</b></div><div><span>السعر النهائي</span><b>'+money(final)+'</b></div></div><div class="vitrineActions"><button type="button" onclick="addOrder('+p.id+')">اطلب القطعة</button><a target="_blank" href="'+ask+'">استفسر واتساب</a></div>';
 }
-function closeVitrine(){clearTimeout(vitrineFocusTimer);vitrinePanel.classList.remove('show');vitrineShade.classList.remove('show');vitrineScene.classList.remove('focusMode');document.querySelectorAll('.vitrineItem').forEach(b=>b.classList.remove('selected'))}
+function closeVitrine(){clearTimeout(vitrineFocusTimer);vitrinePanel.classList.remove('show');vitrineShade.classList.remove('show');vitrineScene.classList.remove('focusMode');document.querySelectorAll('.vitrineItem').forEach(b=>{b.classList.remove('selected');b.style.setProperty('--lit','.12')});vitrineScene.style.setProperty('--sx','50%');vitrineScene.style.setProperty('--sy','44%')}
 vitrineClose.addEventListener('click',closeVitrine);vitrineShade.addEventListener('click',closeVitrine);
-vitrineScene.addEventListener('pointermove',e=>{if(vitrineScene.classList.contains('focusMode'))return;const r=vitrineScene.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;vitrineScene.style.setProperty('--mx',(x*8).toFixed(2)+'px');vitrineScene.style.setProperty('--my',(y*6).toFixed(2)+'px');document.querySelectorAll('.vitrineItem').forEach((b,i)=>{const d=(i%3)-1;b.style.transform='translate3d('+((x*d)*8).toFixed(1)+'px,'+((y*(i%2?1:-1))*5).toFixed(1)+'px,0)'})});
-vitrineScene.addEventListener('pointerleave',()=>{if(vitrineScene.classList.contains('focusMode'))return;document.querySelectorAll('.vitrineItem').forEach(b=>b.style.transform='')});
+function illuminateVitrine(clientX,clientY){
+ if(vitrineScene.classList.contains('focusMode'))return;
+ const r=vitrineScene.getBoundingClientRect(),x=Math.max(0,Math.min(r.width,clientX-r.left)),y=Math.max(0,Math.min(r.height,clientY-r.top));
+ vitrineScene.style.setProperty('--sx',x+'px');vitrineScene.style.setProperty('--sy',y+'px');
+ document.querySelectorAll('.vitrineItem').forEach(b=>{
+   const br=b.getBoundingClientRect(),cx=br.left+br.width/2,cy=br.top+br.height*.48,dist=Math.hypot(clientX-cx,clientY-cy);
+   const lit=Math.max(.06,Math.min(1,1-dist/230));
+   b.style.setProperty('--lit',lit.toFixed(3));
+ });
+}
+vitrineScene.addEventListener('pointerenter',e=>illuminateVitrine(e.clientX,e.clientY));
+vitrineScene.addEventListener('pointerdown',e=>{illuminateVitrine(e.clientX,e.clientY);try{vitrineScene.setPointerCapture(e.pointerId)}catch(_){}});
+vitrineScene.addEventListener('pointermove',e=>illuminateVitrine(e.clientX,e.clientY));
+vitrineScene.addEventListener('pointerleave',()=>{if(vitrineScene.classList.contains('focusMode'))return;document.querySelectorAll('.vitrineItem').forEach(b=>b.style.setProperty('--lit','.12'));vitrineScene.style.setProperty('--sx','50%');vitrineScene.style.setProperty('--sy','44%')});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&vitrinePanel.classList.contains('show'))closeVitrine()});
 
 window.openProduct=id=>{const p=db.products.find(x=>x.id===id);if(!p)return;drawerTitle.textContent=p.name;drawerBody.innerHTML='<div class="detailVisual">◆</div><div class="detailMeta"><span>'+p.cat+'</span><span>'+p.k+'K</span><span>'+p.w+' غ</span><span>'+(p.sku||'')+'</span></div><div class="detailPrice">'+money(price(p))+'</div><p style="color:#736652;line-height:1.8">قيمة الذهب '+money(rate(p.k)*p.w)+' • المصنعية '+money((p.work||0)*p.w+(p.fixed||0))+'</p><div class="detailActions"><button onclick="addOrder('+p.id+')">اطلب القطعة</button><a target="_blank" href="'+(waNum?waUrl+'?text='+encodeURIComponent('مرحبًا، أريد الاستفسار عن '+p.name+' '+(p.sku||'')):'#')+'">واتساب</a></div>';drawer.classList.add('show');drawerShade.classList.add('show')};
