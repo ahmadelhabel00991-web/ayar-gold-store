@@ -133,6 +133,18 @@ footer{background:#0d0b08;color:#cab98f;padding:55px 0 25px}.footerGrid{display:
 .vitrineItem{position:relative;min-height:205px;border:0;background:transparent;color:#f7e8bd;padding:14px 10px 17px;border-radius:22px;transition:.35s cubic-bezier(.2,.8,.2,1)}
 .vitrineItem:before{content:"";position:absolute;left:12%;right:12%;bottom:6px;height:20px;border-radius:50%;background:#000b;filter:blur(8px);transition:.35s}
 .vitrineItem:hover,.vitrineItem:focus-visible{transform:translateY(-10px);outline:none}
+.vitrineScene.focusMode{transform:scale(1.035) translateY(-4px);box-shadow:0 48px 120px #000d,inset 0 0 0 1px #ffe49a20}
+.vitrineScene.focusMode .vitrineItem{opacity:.18;filter:blur(1px);transform:scale(.88);pointer-events:none}
+.vitrineScene.focusMode .vitrineItem.selected{opacity:1;filter:none;transform:translateY(-18px) scale(1.24);z-index:12}
+.vitrineScene.focusMode .vitrineItem.selected .jewelPedestal svg{transform:scale(1.12);filter:drop-shadow(0 18px 17px #000d) drop-shadow(0 0 36px #f0c55ea0)}
+.vitrineScene.focusMode:after{background:linear-gradient(108deg,transparent 7%,#ffffff1d 28%,transparent 43%,transparent 58%,#fff1bd17 76%,transparent 92%);animation:glassSweep .8s ease both}
+@keyframes glassSweep{from{transform:translateX(-12%);opacity:.25}to{transform:translateX(9%);opacity:1}}
+.vitrineItem.selected .vitrineItemText b{color:#ffe19a}
+.vitrineItem.selected .vitrineItemText span{color:#e8d6aa}
+.vitrineHero svg{transition:transform .35s ease}
+.vitrineHero.inspect svg{transform:scale(1.1) rotate(-2deg)}
+.vitrineProductDetail{animation:detailIn .28s ease}
+@keyframes detailIn{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:none}}
 .vitrineItem:hover:before,.vitrineItem:focus-visible:before{background:#d5a13a5c;filter:blur(14px)}
 .jewelPedestal{height:150px;display:grid;place-items:center;border-radius:80px 80px 24px 24px;background:radial-gradient(ellipse at 50% 88%,#e0ad4140 0 16%,transparent 47%),linear-gradient(180deg,transparent,#ffffff08);position:relative}
 .jewelPedestal svg{width:min(132px,72%);height:116px;overflow:visible;filter:drop-shadow(0 12px 13px #000b) drop-shadow(0 0 16px #d8a54044);transition:.35s}
@@ -379,26 +391,33 @@ function renderFirstVitrine(){
  io.observe(firstShowcase);
 }
 let activeVitrineList=[];
+let vitrineFocusTimer=null;
 function openVitrineType(cat){
  activeVitrineList=db.products.filter(p=>p.cat===cat&&Number(p.stock||0)>0);
  if(!activeVitrineList.length)return;
+ clearTimeout(vitrineFocusTimer);
+ document.querySelectorAll('.vitrineItem').forEach(b=>b.classList.toggle('selected',b.dataset.cat===cat));
+ vitrineScene.classList.add('focusMode');
  vitrinePanelTitle.textContent=cat;
  vitrinePanelSub.textContent=activeVitrineList.length+' تصميم متاح داخل هذه الفترينة';
- vitrinePanelBody.innerHTML='<div class="vitrineHero">'+jewelIcon(cat)+'</div><div class="vitrineSwitch">'+activeVitrineList.map((p,i)=>'<button type="button" data-vpid="'+p.id+'" class="'+(i===0?'active':'')+'">'+p.name+'</button>').join('')+'</div><div id="vitrineProductDetail"></div>';
+ vitrinePanelBody.innerHTML='<div class="vitrineHero inspect">'+jewelIcon(cat)+'</div><div class="vitrineSwitch">'+activeVitrineList.map((p,i)=>'<button type="button" data-vpid="'+p.id+'" class="'+(i===0?'active':'')+'">'+p.name+'</button>').join('')+'</div><div id="vitrineProductDetail" class="vitrineProductDetail"></div>';
  vitrinePanelBody.querySelectorAll('[data-vpid]').forEach(b=>b.addEventListener('click',()=>renderVitrineProduct(Number(b.dataset.vpid))));
  renderVitrineProduct(activeVitrineList[0].id);
- vitrinePanel.classList.add('show');vitrineShade.classList.add('show');
- document.querySelectorAll('.vitrineItem').forEach(b=>b.classList.toggle('selected',b.dataset.cat===cat));
+ vitrineFocusTimer=setTimeout(()=>{vitrinePanel.classList.add('show');vitrineShade.classList.add('show')},520);
 }
 function renderVitrineProduct(id){
  const p=activeVitrineList.find(x=>Number(x.id)===Number(id));if(!p)return;
  vitrinePanelBody.querySelectorAll('[data-vpid]').forEach(b=>b.classList.toggle('active',Number(b.dataset.vpid)===Number(id)));
  const goldValue=rate(p.k)*p.w,workValue=(p.work||0)*p.w+(p.fixed||0),final=price(p);
  const ask=waNum?waUrl+'?text='+encodeURIComponent('مرحبًا، أريد تفاصيل '+p.name+' - '+(p.sku||'')):'#';
- document.getElementById('vitrineProductDetail').innerHTML='<div class="vitrineProductName"><div><h3>'+p.name+'</h3><small>'+(p.sku||'قطعة من الفترينة الأولى')+'</small></div><b>'+money(final)+'</b></div><div class="vitrineSpecs"><div><span>العيار</span><b>'+p.k+'K</b></div><div><span>الوزن</span><b>'+p.w+' غ</b></div><div><span>سعر الجرام</span><b>'+money(rate(p.k))+'</b></div><div><span>المتوفر</span><b>'+p.stock+' قطعة</b></div></div><div class="vitrineBreakdown"><div><span>قيمة الذهب</span><b>'+money(goldValue)+'</b></div><div><span>المصنعية</span><b>'+money(workValue)+'</b></div><div><span>السعر النهائي</span><b>'+money(final)+'</b></div></div><div class="vitrineActions"><button type="button" onclick="addOrder('+p.id+')">اطلب القطعة</button><a target="_blank" href="'+ask+'">استفسر واتساب</a></div>';
+ const detail=document.getElementById('vitrineProductDetail');
+ detail.classList.remove('vitrineProductDetail');void detail.offsetWidth;detail.classList.add('vitrineProductDetail');
+ detail.innerHTML='<div class="vitrineProductName"><div><h3>'+p.name+'</h3><small>'+(p.sku||'قطعة من الفترينة الأولى')+'</small></div><b>'+money(final)+'</b></div><div class="vitrineSpecs"><div><span>العيار</span><b>'+p.k+'K</b></div><div><span>الوزن</span><b>'+p.w+' غ</b></div><div><span>سعر الجرام</span><b>'+money(rate(p.k))+'</b></div><div><span>المتوفر</span><b>'+p.stock+' قطعة</b></div></div><div class="vitrineBreakdown"><div><span>قيمة الذهب</span><b>'+money(goldValue)+'</b></div><div><span>المصنعية</span><b>'+money(workValue)+'</b></div><div><span>السعر النهائي</span><b>'+money(final)+'</b></div></div><div class="vitrineActions"><button type="button" onclick="addOrder('+p.id+')">اطلب القطعة</button><a target="_blank" href="'+ask+'">استفسر واتساب</a></div>';
 }
-function closeVitrine(){vitrinePanel.classList.remove('show');vitrineShade.classList.remove('show');document.querySelectorAll('.vitrineItem').forEach(b=>b.classList.remove('selected'))}
+function closeVitrine(){clearTimeout(vitrineFocusTimer);vitrinePanel.classList.remove('show');vitrineShade.classList.remove('show');vitrineScene.classList.remove('focusMode');document.querySelectorAll('.vitrineItem').forEach(b=>b.classList.remove('selected'))}
 vitrineClose.addEventListener('click',closeVitrine);vitrineShade.addEventListener('click',closeVitrine);
+vitrineScene.addEventListener('pointermove',e=>{if(vitrineScene.classList.contains('focusMode'))return;const r=vitrineScene.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;vitrineScene.style.setProperty('--mx',(x*8).toFixed(2)+'px');vitrineScene.style.setProperty('--my',(y*6).toFixed(2)+'px');document.querySelectorAll('.vitrineItem').forEach((b,i)=>{const d=(i%3)-1;b.style.transform='translate3d('+((x*d)*8).toFixed(1)+'px,'+((y*(i%2?1:-1))*5).toFixed(1)+'px,0)'})});
+vitrineScene.addEventListener('pointerleave',()=>{if(vitrineScene.classList.contains('focusMode'))return;document.querySelectorAll('.vitrineItem').forEach(b=>b.style.transform='')});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&vitrinePanel.classList.contains('show'))closeVitrine()});
 
 window.openProduct=id=>{const p=db.products.find(x=>x.id===id);if(!p)return;drawerTitle.textContent=p.name;drawerBody.innerHTML='<div class="detailVisual">◆</div><div class="detailMeta"><span>'+p.cat+'</span><span>'+p.k+'K</span><span>'+p.w+' غ</span><span>'+(p.sku||'')+'</span></div><div class="detailPrice">'+money(price(p))+'</div><p style="color:#736652;line-height:1.8">قيمة الذهب '+money(rate(p.k)*p.w)+' • المصنعية '+money((p.work||0)*p.w+(p.fixed||0))+'</p><div class="detailActions"><button onclick="addOrder('+p.id+')">اطلب القطعة</button><a target="_blank" href="'+(waNum?waUrl+'?text='+encodeURIComponent('مرحبًا، أريد الاستفسار عن '+p.name+' '+(p.sku||'')):'#')+'">واتساب</a></div>';drawer.classList.add('show');drawerShade.classList.add('show')};
